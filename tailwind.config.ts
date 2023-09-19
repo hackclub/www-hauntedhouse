@@ -8,15 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        accent: { default: "#EB6424", darker: "#CC5600" },
+        beige: "#FEFAE0",
+        blackish: "#1E1E1E",
+        strongblue: "#248BEB",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
-
-    colors: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

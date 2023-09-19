@@ -1,10 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Limelight&family=Piedra&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Rye&family=Yusei+Magic&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -16,6 +14,15 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+} */
+
+@font-face {
+  font-family: "The Fright House";
+  src: url("/TheFrightHouseRegular.woff2") format("woff2"),
+    url("/TheFrightHouseRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 h1,
@@ -23,15 +30,18 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Playfair Display", serif;
+  /* font-family: "UnifrakturMaguntia", cursive; */
+  /* font-family: "Pirata One", cursive; */
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "The Fright House", serif;
+
+  background: #000;
+
+  /* @apply leading-[108.5%] tracking-[3.5%] */
+  line-height: 108.6%; /* 126.684px */
+  letter-spacing: 5.583px;
+  /* font-family: "Nothing You Could Do", cursive; */
+  /* color: rgb(var(--foreground-rgb)); */
 }
