@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Limelight&family=Nothing+You+Could+Do&family=Permanent+Marker&family=Piedra&family=Pirata+One&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Rye&family=Shadows+Into+Light&family=UnifrakturMaguntia&family=Yusei+Magic&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +18,10 @@
   }
 } */
 
+.marker {
+  font-family: "Permanent Marker", cursive;
+}
+
 @font-face {
   font-family: "The Fright House";
   src: url("/TheFrightHouseRegular.woff2") format("woff2"),
@@ -32,6 +38,12 @@ h4,
 h5 {
   /* font-family: "UnifrakturMaguntia", cursive; */
   /* font-family: "Pirata One", cursive; */
+  line-height: 108.6%; /* 126.684px */
+  letter-spacing: 1.5px;
+}
+
+p {
+  letter-spacing: 0.7px;
 }
 
 body {
@@ -40,8 +52,277 @@ body {
   background: #000;
 
   /* @apply leading-[108.5%] tracking-[3.5%] */
-  line-height: 108.6%; /* 126.684px */
-  letter-spacing: 5.583px;
+
   /* font-family: "Nothing You Could Do", cursive; */
   /* color: rgb(var(--foreground-rgb)); */
+}
+
+.card {
+  perspective: 150rem;
+  position: relative;
+
+  /* transform-origin: center; */
+  /* height: 40rem;
+  max-width: 400px;
+  margin: 2rem; */
+  box-shadow: none;
+  background: none;
+}
+
+.card-side {
+  /* height: 35rem; */
+  /* border-radius: 15px; */
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-side.back {
+  transform: rotateY(-180deg);
+  /* background-color: #4158D0; */
+  /* background-image: linear-gradient(43deg, #4158D0 0%,#C850C0 46%, #FFCC70 100%); */
+}
+
+.card-side.front {
+  /* background-color: #0093E9; */
+  /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); */
+}
+
+.card:hover .card-side.front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+  transform: rotateY(0deg);
+}
+
+.prior-flicker {
+  opacity: 1;
+}
+#I {
+  opacity: 1;
+  animation: flickerI 2s linear reverse 5;
+}
+#I::after,
+#I::before {
+  content: "";
+  /* width: 150%; */
+  -webkit-box-shadow: -35px 0px 60px 8px rgba(0, 0, 0, 1);
+  -moz-box-shadow: -35px 0px 60px 8px rgba(0, 0, 0, 1);
+  box-shadow: -35px 0px 60px 8px rgba(0, 0, 0, 1);
+}
+#L,
+#G {
+  animation: flickerLG 2s linear reverse 5;
+  position: relative;
+}
+#L::after,
+#L::before {
+  content: "";
+  /* width: 100px; */
+  /* height: 100px; */
+  background: var(--white);
+  position: absolute;
+  top: -50%;
+  left: 100%;
+  border-radius: 100%;
+  opacity: 0.05;
+  filter: blur(10px);
+}
+#L::after {
+  width: 200px;
+  height: 200px;
+  top: -150%;
+  left: -5%;
+  opacity: 0.1;
+  filter: blur(10px);
+}
+#H {
+  animation: flickerH 2s linear reverse infinite;
+}
+
+#T {
+  animation: flickerH 2s linear reverse infinite;
+}
+
+@keyframes flickerI {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flickerLG {
+  0% {
+    opacity: 0.19;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  15% {
+    opacity: 0.35;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes flickerH {
+  0% {
+    opacity: 0.15;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.12;
+  }
+  15% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.15;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.12;
+  }
+  45% {
+    opacity: 0.15;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.18;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes flickerT {
+  0% {
+    opacity: 0.01;
+  }
+  5% {
+    opacity: 0.05;
+  }
+  10% {
+    opacity: 0.03;
+  }
+  15% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.07;
+  }
+  30% {
+    opacity: 0.1;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.06;
+  }
+  45% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.1;
+  }
 }

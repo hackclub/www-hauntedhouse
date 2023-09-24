@@ -23,11 +23,11 @@ export default function Home() {
             setOpen(!open);
           }}
         >
+
           <img
             src="/door.png"
-            className={`h-screen w-[50vw] bg-black text-white transition duration-500 ease-in-out ${
-              open && "-translate-x-[40vw]"
-            } `}
+            className={`h-screen w-[50vw] bg-black text-white transition duration-500 ease-in-out ${open && "-translate-x-[40vw]"
+              } `}
           />
         </button>
 
@@ -38,9 +38,8 @@ export default function Home() {
         >
           <img
             src="/door.png"
-            className={`h-screen w-[50vw] bg-black text-white transition  duration-500 ease-in-out transform ${
-              open && "translate-x-[40vw]"
-            }`}
+            className={`h-screen w-[50vw] bg-black text-white transition  duration-500 ease-in-out transform ${open && "translate-x-[40vw]"
+              }`}
           />
         </button>
       </div>
