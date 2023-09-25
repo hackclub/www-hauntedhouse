@@ -136,6 +136,13 @@
   dependencies:
     tslib "^2.4.0"
 
+"@szhsin/react-accordion@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@szhsin/react-accordion/-/react-accordion-1.2.3.tgz#ee4d83c66a89748bfe2a2b23dd14bbb3d4f63fbf"
+  integrity sha512-KsDmaYsv4+Rnla+fSdZMIMonzuvXlDRPaFeIa7Je0dnwY4iFry5eiw27GQ6276+tYkVRgUyfS/mEcL48efSivA==
+  dependencies:
+    react-transition-state "^2.1.1"
+
 "@tailwindcss/typography@^0.5.10":
   version "0.5.10"
   resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.5.10.tgz#2abde4c6d5c797ab49cf47610830a301de4c1e0a"
@@ -765,6 +772,11 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-transition-state@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-transition-state/-/react-transition-state-2.1.1.tgz#1601a6177926b647041b7d598bf124321ab8d25b"
+  integrity sha512-kQx5g1FVu9knoz1T1WkapjUgFz08qQ/g1OmuWGi3/AoEFfS0kStxrPlZx81urjCXdz2d+1DqLpU6TyLW/Ro04Q==
 
 react-visibility-sensor@^5.1.1:
   version "5.1.1"

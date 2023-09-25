@@ -1,4 +1,5 @@
 import { CardSection } from "@/components/CardSection";
+import { Faq } from "@/components/Faq";
 import { InvitationHero } from "@/components/InvitationHero";
 import { Satellites } from "@/components/Satellites";
 import { WhatHackathon } from "@/components/WhatHackathon";
@@ -30,13 +31,16 @@ export default function Invitation() {
                 transitionDuration={1000}
               >
                 <h4
-                  id="L"
+                  id={`${isVisible || visibleOnce ? "L" : "notL"}`}
                   className="prior-flicker text-5xl text-gray-300 text-center mb-3"
                 >
                   Welcome to...
                 </h4>
 
-                <h1 id="I" className="text-9xl text-accent-default text-center">
+                <h1
+                  id={`${isVisible || visibleOnce ? "I" : "notI"}`}
+                  className="text-9xl text-accent-default text-center"
+                >
                   The Haunted House
                 </h1>
               </FadeIn>
@@ -53,7 +57,7 @@ export default function Invitation() {
       <div className="mb-12">
         <CardSection />
       </div>
-      <div className="h-screen">
+      <div className="">
         <div className="snap-end shrink-0">
           <WhatHackathon />
         </div>
@@ -62,6 +66,8 @@ export default function Invitation() {
         <div className="snap-center shrink-0">
           <Satellites />
         </div>
+
+        <Faq />
       </div>
     </div>
   );
