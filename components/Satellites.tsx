@@ -7,17 +7,15 @@ export const Satellites = () => {
     <div className="flex flex-col md:flex-row border-t  border-accent-default border-dashed divide-x divide-accent-default divide-dashed">
       <div className="p-8 md:p-12 w-1/2">
         <h1 className="text-6xl text-accent-darker mb-6">
-          Can't come to Chicago
+          Don't live in Chicago?
         </h1>
         <div className="space-y-8">
           <Definition />
           <div className="flex h-full space-x-8">
-            <div className="w-1/2">
+            <div className="w-full">
               <Projects />
             </div>
-            <div className="w-1/2">
-              <Vibe />
-            </div>
+            {/* <div className="w-1/2"><Vibe /></div> */}
           </div>
         </div>
       </div>

@@ -57,9 +57,7 @@ export default function Invitation() {
         <div className="snap-end shrink-0">
           <WhatHackathon />
         </div>
-        <div className="snap-center shrink-0">
-          <WhatIsThis />
-        </div>
+        <div className="snap-center shrink-0">{/* <WhatIsThis /> */}</div>
 
         <div className="snap-center shrink-0">
           <Satellites />
