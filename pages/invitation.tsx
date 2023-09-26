@@ -43,6 +43,8 @@ export default function Invitation() {
                 >
                   The Haunted House
                 </h1>
+
+                <p>subtext</p>
               </FadeIn>
             );
           }}

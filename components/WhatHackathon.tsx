@@ -8,10 +8,18 @@ export const WhatHackathon = () => {
       <div className="p-8 md:p-12 w-1/2">
         {/* <img src="/cardimages/tape.png" /> */}
         <div className="relative pt-10 flex flex-col h-full justify-center items-center">
-          <div className=" bg-accent-default relative aspect-[83/100] w-[85%] max-w-lg mx-auto my-auto p-[30px]">
+          <img
+            src="/stacked1.png"
+            className="absolute scale-105 aspect-[83/100] mx-auto my-auto"
+          />
+          <img
+            src="/stacked2.png"
+            className="absolute scale-105 aspect-[83/100] mx-auto my-auto"
+          />
+          <div className=" bg-accent-default  relative aspect-[83/100] w-[85%] max-w-lg mx-auto my-auto p-[30px]">
             <img
               src="/cardimages/tape.png"
-              className="w-[26%] max-w-[7rem] -top-[10%] left-[45%] absolute z-50"
+              className="w-[26%] max-w-[7rem] -top-[15%] left-[45%] absolute z-50"
             />
             <div className="overflow-hidden relative">
               <div
@@ -25,14 +33,18 @@ export const WhatHackathon = () => {
                 </a>
               </h1>
             </div>
-            <img
-              src="/cardimages/witch.png"
-              className="absolute z-0 -left-5 -bottom-5 w-[25%]"
-            />
-            <img
-              src="/cardimages/web.png"
-              className="absolute z-0 -right-10 -bottom-10 w-[40%]"
-            />
+            <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
+              <img
+                src="/cardimages/witch.png"
+                className="absolute z-0 -left-5 -bottom-5 w-[25%]"
+              />
+            </div>
+            <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
+              <img
+                src="/cardimages/web.png"
+                className="absolute z-0 -right-10  -bottom-10 w-[40%]"
+              />
+            </div>
           </div>
         </div>
       </div>
