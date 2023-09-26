@@ -2,6 +2,7 @@ import { CardSection } from "@/components/CardSection";
 import { Faq } from "@/components/Faq";
 import { InvitationHero } from "@/components/InvitationHero";
 import { Satellites } from "@/components/Satellites";
+import { Signup } from "@/components/Signup";
 import { WhatHackathon } from "@/components/WhatHackathon";
 import { WhatIsThis } from "@/components/WhatIsThis";
 import dynamic from "next/dynamic";
@@ -70,6 +71,8 @@ export default function Invitation() {
         </div>
 
         <Faq />
+
+        <Signup />
       </div>
     </div>
   );
