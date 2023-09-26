@@ -1,19 +1,23 @@
 export const InvitationHero = () => {
   return (
-    <div className="w-screen h-screen justify-center flex flex-col items-center">
-      <div className="px-6 w-[80%] max-w-5xl">
+    <div className="bg-[url('/alleyway-background.png')] bg-left-top w-screen h-screen justify-center flex flex-col items-center">
+      <div className="px-6 pt-12 w-[80%] max-w-5xl">
         <button className="card relative aspect-[1421/904] h-auto w-full  mx-auto">
           <img
             src="/quainthouse.png"
-            className={`card-side front   border-[0.8rem]   transition border-white`}
+            className={`card-side front shadow-2xl shadow-red-500  border-[0.8rem]   transition border-white`}
           />
           <img
             src="/postcard.svg"
-            className={`card-side back   border-[0.8rem]   transition border-white`}
+            className={`card-side back shadow-2xl shadow-red-500  border-[0.8rem]   transition border-white`}
           />
         </button>
       </div>
       {/* <h1 className="text-7xl  text-accent-default">The Haunted House</h1> */}
+      <div className="pointer-events-none fixed bg-gradient-to-b from-transparent from-50% z-[99] to-black w-full h-full"></div>
+      <div className="pointer-events-none static bg-gradient-to-b from-transparent from-10% z-[99] to-black w-full h-full"></div>
+
+      {/* <div class=""></div> */}
     </div>
   );
 };

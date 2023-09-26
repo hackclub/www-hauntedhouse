@@ -17,10 +17,10 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 export default function Invitation() {
   const [visibleOnce, setVisibleOnce] = useState(false);
   return (
-    <div>
+    <div className="pb-[15%]">
       <InvitationHero />
 
-      <div className="">
+      <div className="mt-12">
         <VisibilitySensor>
           {({ isVisible }) => {
             isVisible ? setVisibleOnce(true) : "";

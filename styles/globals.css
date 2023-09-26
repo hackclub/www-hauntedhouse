@@ -24,8 +24,8 @@
 
 @font-face {
   font-family: "The Fright House";
-  src: url("/TheFrightHouseRegular.woff2") format("woff2"),
-    url("/TheFrightHouseRegular.woff") format("woff");
+  src: url("/TheFrightHouse/TheFrightHouseRegular.woff2") format("woff2"),
+    url("/TheFrightHouse/TheFrightHouseRegular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

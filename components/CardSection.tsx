@@ -12,7 +12,7 @@ export const CardSection = () => {
         <Hackers />
       </div>
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl scale-110 mx-auto">
         <Definition />
       </div>
     </div>
