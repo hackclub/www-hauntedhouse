@@ -33,7 +33,7 @@ export default function Invitation() {
               >
                 <h4
                   id={`${isVisible || visibleOnce ? "L" : "notL"}`}
-                  className="prior-flicker text-5xl text-gray-300 text-center mb-3"
+                  className="prior-flicker text-4xl text-beige text-center mb-3"
                 >
                   Welcome to...
                 </h4>
@@ -45,7 +45,12 @@ export default function Invitation() {
                   The Haunted House
                 </h1>
 
-                <p>subtext</p>
+                <p
+                  id={`${isVisible || visibleOnce ? "I" : "notI"}`}
+                  className="text-3xl text-center text-beige mt-2"
+                >
+                  A 24-hour hackathon for highschoolers in Chicago
+                </p>
               </FadeIn>
             );
           }}
@@ -60,7 +65,7 @@ export default function Invitation() {
       <div className="mb-12">
         <CardSection />
       </div>
-      <div className="">
+      <div className="space-y-12">
         <div className="snap-end shrink-0">
           <WhatHackathon />
         </div>

@@ -10,7 +10,8 @@ export const Vibe = () => {
           The vibe? Insane. We chug energy drinks at 3am, play music, and have a
           great time overall. You’ll also get to meet hundreds of cool (and
           pretty smart) people and forge lifelong friendships, all by hanging
-          out and having fun. 
+          out and having fun. TODO FIX
+          {/* As the full moon  */}
         </p>
       </div>
     </div>

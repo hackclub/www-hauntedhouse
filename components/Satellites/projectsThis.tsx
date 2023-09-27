@@ -10,9 +10,10 @@ export const Projects = () => {
 
       <div>
         <p className="text-beige text-xl">
-          We’re making a haunted house on the interwebs. We’ll provide an “entry
-          point” that links to the website you made, which will then link to
-          another participant’s website.
+          TODO FIX THIS Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Cumque, asperiores modi voluptates velit labore recusandae ab corrupti
+          aspernatur reprehenderit ullam facilis deleniti, iste illum corporis
+          beatae consectetur hic officiis error.
         </p>
       </div>
     </div>

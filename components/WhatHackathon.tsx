@@ -4,8 +4,8 @@ import { Vibe } from "./HackathonExplain/vibe";
 
 export const WhatHackathon = () => {
   return (
-    <div className="flex flex-col md:flex-row border-t  border-accent-default border-dashed divide-x divide-accent-default divide-dashed">
-      <div className="p-8 md:p-12 w-1/2">
+    <div className="flex flex-col md:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
+      <div className="p-8 md:p-12 w-[40%]">
         {/* <img src="/cardimages/tape.png" /> */}
         <div className="relative pt-10 flex flex-col h-full justify-center items-center">
           <img
@@ -48,7 +48,7 @@ export const WhatHackathon = () => {
           </div>
         </div>
       </div>
-      <div className="p-8 md:p-12 w-1/2">
+      <div className="p-8 md:p-12 w-[60%]">
         <h1 className="text-6xl text-accent-darker mb-6">
           What is a hackathon?
         </h1>

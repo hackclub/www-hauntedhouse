@@ -19,5 +19,5 @@ export default function handler(
     return;
   }
 
-  const body = JSON.parse(req.body);
+  const body: Body = JSON.parse(req.body);
 }

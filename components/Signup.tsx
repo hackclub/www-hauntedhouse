@@ -27,6 +27,7 @@ export const Signup = () => {
             </div>
             <input
               type="submit"
+              value={"Sign Up"}
               className="text-xl hover:cursor-pointer border-accent-darker border-3 rounded-lg bg-blackish text-beige px-4 py-2 w-full hover:bg-beige hover:text-blackish transition ease-in-out duration-150"
             />
           </div>
