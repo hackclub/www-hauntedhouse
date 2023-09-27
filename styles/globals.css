@@ -42,6 +42,10 @@ h5 {
   letter-spacing: 1.5px;
 }
 
+a {
+  /* @apply text-orange-300; */
+}
+
 p {
   letter-spacing: 0.7px;
 }

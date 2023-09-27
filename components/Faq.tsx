@@ -5,16 +5,90 @@ import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
 
 const items = [
   {
-    header: "What is Lorem Ipsum?",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing...",
+    header: "Am I eligible to participate in Haunted House?",
+    content: (
+      <div>
+        If you're eighteen or under, yes, we are so excited to see you in
+        Chicago! If you're over 18 but still in high school, shoot us a mail at{" "}
+        <a href="mailto:hauntedhouse@hackclub.com" className="underline">
+          hauntedhouse@hackclub.com
+        </a>
+        .
+      </div>
+    ),
   },
   {
-    header: "Where does it come from?",
-    content: "Quisque eget luctus mi, vehicula mollis lorem...",
+    header: "What do I need to bring to Haunted House?",
+    content:
+      "Your laptop, chargers, anything for your hack, toiletries, sleeping bags, and an open mind.",
   },
   {
-    header: "Why do we use it?",
-    content: "Suspendisse massa risus, pretium id interdum in...",
+    header: "I'm not that good at coding, can I join?",
+    content: (
+      <div>
+        This hackathon is for hackers of all skill levels! We'll have workshops
+        and other events so join us and let's learn together. If you'd like to
+        start exploring some introductory projects, check out{" "}
+        <a href="https://workshops.hackclub.com" className="underline">
+          Hack Club Workshops
+        </a>
+        .
+      </div>
+    ),
+  },
+  {
+    header: "My parents are worried! What should I do?",
+    content: (
+      <div>
+        We're here to help, ask them to reach out to us at{" "}
+        <a href="mailto:hauntedhouse@hackclub.com" className="underline">
+          hauntedhouse@hackclub.com
+        </a>{" "}
+        and we'll make sure to answer all their questions. Haunted House will be
+        supervised by background checked staff and overseen by 24/7 security
+        staff. Read more in our{" "}
+        <a href="https://outernet.hackclub.com FIX TODO" className="underline">
+          parent's guide
+        </a>
+        .
+      </div>
+    ),
+  },
+];
+
+const items2 = [
+  {
+    header: "Does participating cost anything?",
+    content:
+      "Nothing! We’ll have meals, snacks, and beverages onsite at the hackathon, as well as swag, prizes, and fun mini-events.",
+  },
+  {
+    header: "What can I make at Haunted House?",
+    content: <div>TODO FILL LATER</div>,
+  },
+  {
+    header: "What are the sleeping arrangements?",
+    content: (
+      <div>
+        On both nights we will have a designated gender-seperated and supervised
+        sleeping area in the venue with low lights and minimal sound for you to
+        rest! Make sure to bring a sleeping bag!
+      </div>
+    ),
+  },
+  {
+    header: "I have more questions, how can I reach out?",
+    content: (
+      <div>
+        Contact us! Reach out on{" "}
+        <span className="italics underline">#hauntedhouse</span> on the Hack
+        Club Slack or email us at{" "}
+        <a href="mailto:hauntedhouse@hackclub.com" className="underline">
+          hauntedhouse@hackclub.com
+        </a>
+        . We're always ready to answer all your questions!
+      </div>
+    ),
   },
 ];
 
@@ -68,7 +142,7 @@ export const Faq = () => {
           transitionTimeout={250}
           className="space-y-4 w-full"
         >
-          {items.map(({ header, content }, i) => (
+          {items2.map(({ header, content }, i) => (
             <AccordionItem header={header} key={i}>
               {content}
             </AccordionItem>

@@ -10,10 +10,18 @@ export const Projects = () => {
 
       <div>
         <p className="text-beige text-xl">
-          TODO FIX THIS Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Cumque, asperiores modi voluptates velit labore recusandae ab corrupti
-          aspernatur reprehenderit ullam facilis deleniti, iste illum corporis
-          beatae consectetur hic officiis error.
+          In a few cities around you, there might be a satellite event happening
+          (local "branches" of Haunted House if you may). Check out{" "}
+          <span className="underline">#hauntedhouse-satellites</span> on the{" "}
+          <a href="https://hackclub.com/slack" className="underline">
+            Slack
+          </a>{" "}
+          and{" "}
+          <a href="https://hackathons.hackclub.com" className="underline">
+            hackathons.hackclub.com
+          </a>{" "}
+          to see if there are any Haunted House satellite events happening in
+          your area.
         </p>
       </div>
     </div>
