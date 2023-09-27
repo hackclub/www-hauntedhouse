@@ -64,7 +64,15 @@ const items2 = [
   },
   {
     header: "What can I make at Haunted House?",
-    content: <div>TODO FILL LATER</div>,
+    content: (
+      <div>
+        At Haunted House, we're building a haunted house on the interwebs. We’ll
+        provide an “entry point” that links to the website you made, which will
+        then link to another participant’s website. By linking all of these
+        sites together we'll have created an epic multi-room virtual haunted
+        house that you can share with friends and family.
+      </div>
+    ),
   },
   {
     header: "What are the sleeping arrangements?",
@@ -122,7 +130,7 @@ const AccordionItem = ({ header, ...rest }) => (
 
 export const Faq = () => {
   return (
-    <div className="p-8 md:p-12 w-full border-t border-b border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
+    <div className="p-8 md:p-12 w-full border-t border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
       <h1 className="text-accent-default text-7xl text-center mb-6">FAQs</h1>
 
       <div className="flex space-x-4 w-full">
