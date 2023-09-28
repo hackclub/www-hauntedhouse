@@ -43,7 +43,7 @@ export default function Home() {
           />
         </button>
       </div>
-      <div className="flex items-center h-screen w-screen bg-purple-500">
+      <div className="flex items-center h-[100vh] w-screen bg-[url('/doors/doorbg.png')] bg-contain bg-no-repeat bg-center">
         <button
           onClick={() => {
             alert("hi");
