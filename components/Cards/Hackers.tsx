@@ -22,7 +22,7 @@ export const Hackers = () => {
         className="absolute -bottom-[30px] -right-[15px] w-full"
       />
 
-      <h1 className=" text-blackish mt-[30%] -rotate-6 text-8xl text-center ">
+      <h1 className=" text-blackish mt-[30%] -rotate-6 text-[550%] text-center ">
         150
         <br />
         Hackers

@@ -22,7 +22,7 @@ export const DateCard = () => {
         className="absolute -bottom-10 -right-[15px] w-3/4"
       />
 
-      <h1 className=" text-beige text-8xl -rotate-[15deg] text-center ">
+      <h1 className="  text-beige text-[550%] -rotate-[15deg] text-center ">
         October
         <br />
         28-29

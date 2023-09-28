@@ -26,6 +26,7 @@
     "react-fade-in": "^2.0.1",
     "react-visibility-sensor": "^5.1.1",
     "tailwindcss": "3.3.3",
+    "tailwindcss-fluid-type": "^2.0.3",
     "typescript": "5.2.2"
   },
   "devDependencies": {

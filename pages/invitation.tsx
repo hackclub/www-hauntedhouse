@@ -24,7 +24,7 @@ export default function Invitation() {
       <div className="pb-[15%]">
         <InvitationHero />
 
-        <div className="mt-12">
+        <div className="mt-12 px-4">
           <VisibilitySensor>
             {({ isVisible }) => {
               isVisible ? setVisibleOnce(true) : "";
@@ -36,21 +36,21 @@ export default function Invitation() {
                 >
                   <h4
                     id={`${isVisible || visibleOnce ? "L" : "notL"}`}
-                    className="prior-flicker text-4xl text-beige text-center mb-3"
+                    className="prior-flicker text-2xl md:text-3xl lg:text-4xl text-beige text-center mb-3"
                   >
                     Welcome to...
                   </h4>
 
                   <h1
                     id={`${isVisible || visibleOnce ? "I" : "notI"}`}
-                    className="text-9xl text-accent-default text-center"
+                    className="text-7xl md:text-8xl lg:text-9xl text-accent-default text-center"
                   >
                     The Haunted House
                   </h1>
 
                   <p
                     id={`${isVisible || visibleOnce ? "I" : "notI"}`}
-                    className="text-3xl text-center text-beige mt-2"
+                    className="text-xl md:text-2xl lg:text-3xl text-center text-beige mt-2"
                   >
                     A 24-hour hackathon for highschoolers in Chicago
                   </p>

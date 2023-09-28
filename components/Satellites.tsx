@@ -4,9 +4,9 @@ import { Vibe } from "./Satellites/vibeThis";
 
 export const Satellites = () => {
   return (
-    <div className="flex flex-col md:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
-      <div className="p-8 md:p-12 w-1/2">
-        <h1 className="text-6xl text-accent-darker mb-6">
+    <div className="flex flex-col-reverse xl:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
+      <div className="p-8 md:p-12 xl:w-1/2">
+        <h1 className="text-4xl xl:text-6xl text-accent-darker mb-6">
           Don't live in Chicago?
         </h1>
         <div className="space-y-8">
@@ -19,7 +19,7 @@ export const Satellites = () => {
           </div>
         </div>
       </div>
-      <div className="p-8 md:p-12 w-1/2 flex justify-center items-center">
+      <div className="p-8 md:p-12 xl:w-1/2 flex justify-center items-center">
         <img src="/map.png" />
       </div>
     </div>

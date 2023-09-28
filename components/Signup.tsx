@@ -4,7 +4,7 @@ export const Signup = () => {
       <div className="p-8 md:p-12 w-full z-[99]">
         <div className="max-w-xl mx-auto">
           <div className="mb-8">
-            <span className="text-accent-default text-6xl text-center">
+            <span className="text-accent-default text-5xl md:text-6xl text-center">
               It's time to enter...
             </span>
           </div>

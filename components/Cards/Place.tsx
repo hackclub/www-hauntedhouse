@@ -22,7 +22,7 @@ export const PlaceCard = () => {
         className="absolute -top-[70px] scale-[-1] rotate-90 -right-[15px] w-3/4"
       />
 
-      <h1 className=" text-beige text-8xl mt-[15%] rotate-[15deg] text-center ">
+      <h1 className=" text-beige text-[550%] mt-[15%] rotate-[15deg] text-center ">
         Downtown
         <br />
         Chicago

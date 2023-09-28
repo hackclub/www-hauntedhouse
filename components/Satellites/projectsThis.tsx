@@ -2,14 +2,14 @@ export const Projects = () => {
   return (
     <div className="h-full p-8 bg-black shadow-accent-default border shadow-[4px_4px_0px_0px_#EB6424] border-solid border-accent-default">
       <div className="mb-4">
-        <h3 className="text-3xl text-beige m-0">
+        <h3 className="text-2xl xl:text-3xl text-beige m-0">
           Look For Satellite Events Near You
         </h3>
         {/* <p className="text-gray-500 text-base m-0">/ˈhakəˌTHän/</p> */}
       </div>
 
       <div>
-        <p className="text-beige text-xl">
+        <p className="text-beige text-lg xl:text-xl">
           In a few cities around you, there might be a satellite event happening
           (local "branches" of Haunted House if you may). Check out{" "}
           <span className="underline">#hauntedhouse-satellites</span> on the{" "}

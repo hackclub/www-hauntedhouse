@@ -4,29 +4,29 @@ import { Vibe } from "./HackathonExplain/vibe";
 
 export const WhatHackathon = () => {
   return (
-    <div className="flex flex-col md:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
-      <div className="p-8 md:p-12 w-[40%]">
+    <div className="flex flex-col xl:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
+      <div className="p-8 md:p-12  xl:w-[40%]">
         {/* <img src="/cardimages/tape.png" /> */}
         <div className="relative pt-10 flex flex-col h-full justify-center items-center">
           <img
             src="/stacked1.png"
-            className="absolute scale-105 aspect-[83/100] mx-auto my-auto"
+            className="absolute opacity-0 sm:opacity-100  scale-105 aspect-[83/100] mx-auto my-auto"
           />
           <img
             src="/stacked2.png"
-            className="absolute scale-105 aspect-[83/100] mx-auto my-auto"
+            className="absolute opacity-0 sm:opacity-100 scale-105 aspect-[83/100] mx-auto my-auto"
           />
-          <div className=" bg-accent-default  relative aspect-[83/100] w-[85%] max-w-lg mx-auto my-auto p-[30px]">
+          <div className=" bg-accent-default pb-4 relative aspect-[80/100] xl:aspect-[83/100] w-full xl:w-[85%] max-w-lg mx-auto my-auto p-[30px]">
             <img
               src="/cardimages/tape.png"
               className="w-[26%] max-w-[7rem] -top-[15%] left-[45%] absolute z-50"
             />
             <div className="overflow-hidden relative">
               <div
-                className={` bg-[url('/outernet-127.png')] bg-center bg-cover aspect-[94/100] w-full`}
+                className={` bg-[url('/outernet-127.png')] bg-center bg-cover aspect-[90/100] xl:aspect-[94/100] w-full`}
               />
 
-              <h1 className="marker text-3xl mt-5 relative z-50 font-black text-beige">
+              <h1 className="pb-4 marker text-xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
                 Flamethrower at{" "}
                 <a href="https://outernet.hackclub.com" className="underline">
                   Outernet
@@ -48,17 +48,17 @@ export const WhatHackathon = () => {
           </div>
         </div>
       </div>
-      <div className="p-8 md:p-12 w-[60%]">
+      <div className="p-8 md:p-12 w-full xl:w-[60%]">
         <h1 className="text-6xl text-accent-darker mb-6">
           What is a hackathon?
         </h1>
         <div className="space-y-8">
           <Definition />
-          <div className="flex h-full space-x-8">
-            <div className="w-1/2">
+          <div className="flex flex-col xl:flex-row h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8">
+            <div className="xl:w-1/2">
               <Projects />
             </div>
-            <div className="w-1/2">
+            <div className="xl:w-1/2">
               <Vibe />
             </div>
           </div>

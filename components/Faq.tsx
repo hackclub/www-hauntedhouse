@@ -105,7 +105,7 @@ const AccordionItem = ({ header, ...rest }) => (
     {...rest}
     header={({ state: { isEnter } }) => (
       <>
-        <h4 className="text-2xl tracking-normal">{header}</h4>
+        <h4 className="text-xl md:text-2xl tracking-normal">{header}</h4>
         <img
           className={`ml-auto transition-transform duration-200 ease-out ${
             isEnter && "rotate-180"
@@ -133,7 +133,7 @@ export const Faq = () => {
     <div className="p-8 md:p-12 w-full border-t border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
       <h1 className="text-accent-default text-7xl text-center mb-6">FAQs</h1>
 
-      <div className="flex space-x-4 w-full">
+      <div className="flex-col lg:flex-row flex space-y-4 lg:space-y-0 lg:space-x-4 w-full">
         <Accordion
           transition
           transitionTimeout={250}
