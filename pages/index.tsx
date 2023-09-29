@@ -6,6 +6,7 @@ import { useRef, useState,useEffect  } from "react";
 import { useRouter } from "next/router";
 
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -23,13 +24,23 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const [clickedOnce, setClickedOnce] = useState(false);
 
+  const audioRef = useRef(null);
+
   useEffect(() => {
+
+    if (open) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
     let timeoutId;
 
     if (clickedOnce && open) {
       timeoutId = setTimeout(() => {
         router.push("/invitation");
-      }, 1000); 
+      }, 2500); 
     }
 
     return () => {
@@ -46,7 +57,8 @@ export default function Home() {
 
   return (
     <main>
-      <div className="fixed top-[60px] left-0 z-40 flex items-center m-auto ml-[320px]">
+      <audio ref={audioRef} src={"/doors/dooraudio.mp3"} />
+      <div className="fixed sm:top-[60px] left-0 z-40 flex items-center m-auto sm:ml-[320px]">
         <button
         onClick={handleClick}
         >
@@ -56,7 +68,7 @@ export default function Home() {
           width={100}
           height={100}
             src="/doors/door1.svg"
-            className={`h-[80vh] w-full transition duration-500 ease-in-out ${open && "-translate-x-[15vw]"
+            className={`sm:h-[80vh] w-full transition duration-500 ease-in-out ${open && "-translate-x-[15vw]"
               } `}
           />
         </button>
@@ -69,7 +81,7 @@ export default function Home() {
           height={100}
           alt="door"
             src="/doors/door2.svg"
-            className={`h-[80vh] w-full transition bg-black duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw] bg-transparent"
+            className={`sm:h-[80vh] w-full transition sm:bg-black duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw] bg-transparent"
               }`}
           />
         </button>
@@ -79,14 +91,7 @@ export default function Home() {
          animate={{ scale: open ? 1.2 : 1 }}
          transition={{ duration: 0.5 }}
       >
-        <button
-          onClick={() => {
-            alert("hi");
-          }}
-          className={`mx-auto z-50 text-white text-lg ${!open && "hidden"}`}
-        >
-        do you want to enter?
-        </button>
+      
       </motion.div>
     </main>
   );
