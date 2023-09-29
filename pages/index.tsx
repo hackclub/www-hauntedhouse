@@ -81,7 +81,7 @@ export default function Home() {
           height={100}
           alt="door"
             src="/doors/door2.svg"
-            className={`sm:h-[80vh] w-full transition sm:bg-black duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw] bg-transparent"
+            className={`sm:h-[80vh] w-full transition sm:bg-black duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw] sm:bg-transparent"
               }`}
           />
         </button>
