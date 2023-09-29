@@ -7,7 +7,7 @@ export const WhatHackathon = () => {
     <div className="flex flex-col xl:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
       <div className="p-8 md:p-12  xl:w-[40%]">
         {/* <img src="/cardimages/tape.png" /> */}
-        <div className="relative pt-10 flex flex-col h-full justify-center items-center">
+        <div className="relative pt-10 py-2 px-2 flex flex-col h-full justify-center items-center">
           <img
             src="/stacked1.png"
             className="absolute opacity-0 sm:opacity-100  scale-105 aspect-[83/100] mx-auto my-auto"
@@ -16,7 +16,7 @@ export const WhatHackathon = () => {
             src="/stacked2.png"
             className="absolute opacity-0 sm:opacity-100 scale-105 aspect-[83/100] mx-auto my-auto"
           />
-          <div className=" bg-accent-default pb-4 relative aspect-[80/100] xl:aspect-[83/100] w-full xl:w-[85%] max-w-lg mx-auto my-auto p-[30px]">
+          <div className=" bg-accent-default pb-4 relative aspect-[83/100] w-full border border-accent-darker shadow-2xl max-w-lg mx-auto my-auto p-[30px]">
             <img
               src="/cardimages/tape.png"
               className="w-[26%] max-w-[7rem] -top-[15%] left-[45%] absolute z-50"
@@ -26,7 +26,7 @@ export const WhatHackathon = () => {
                 className={` bg-[url('/outernet-127.png')] bg-center bg-cover aspect-[90/100] xl:aspect-[94/100] w-full`}
               />
 
-              <h1 className="pb-4 marker text-xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
+              <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
                 Flamethrower at{" "}
                 <a href="https://outernet.hackclub.com" className="underline">
                   Outernet
