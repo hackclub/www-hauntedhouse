@@ -40,7 +40,7 @@ export default function Home() {
     if (clickedOnce && open) {
       timeoutId = setTimeout(() => {
         router.push("/invitation");
-      }, 2500); 
+      }, 2000); 
     }
 
     return () => {
@@ -58,7 +58,35 @@ export default function Home() {
   return (
     <main>
       <audio ref={audioRef} src={"/doors/dooraudio.mp3"} />
-      <div className="fixed sm:top-[80px] left-0 z-40 flex items-center m-auto sm:ml-[360px]">
+      <div className="fixed top-[60px] left-0 z-40 flex items-center m-auto sm:ml-[360px] sm:hidden">
+        <button
+        onClick={handleClick}
+        >
+
+          <Image
+          alt="door"
+          width={100}
+          height={100}
+            src="/doors/mobiledoor1.svg"
+            className={`h-[80vh] w-full transition duration-500 ease-in-out ${open && "-translate-x-[15vw] origin-left"
+              } `}
+          />
+        </button>
+
+        <button
+        onClick={handleClick}
+        >
+          <Image
+          width={100}
+          height={100}
+          alt="door"
+            src="/doors/mobiledoor2.svg"
+            className={`h-[80vh] w-full transition duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw]"
+              }`}
+          />
+        </button>
+      </div>
+      <div className="fixed sm:top-[80px] left-0 z-40 sm:flex items-center m-auto sm:ml-[360px] hidden">
         <button
         onClick={handleClick}
         >
