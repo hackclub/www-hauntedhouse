@@ -2,7 +2,25 @@ import { Definition } from "./HackathonExplain/definition";
 import { Projects } from "./HackathonExplain/projects";
 import { Vibe } from "./HackathonExplain/vibe";
 
+import { RoomProvider, useOthers, useMyPresence } from "../liveblocks.config";
+import { ReactFlashlight } from "react-flashlight";
+import { useRouter } from "next/router";
+import { useMemo } from "react";
+import Cursor from "./Cursor";
+import { OuijaBoard } from "./OuijaBoard";
+
+function useOverrideRoomId(roomId: string) {
+  const { query } = useRouter();
+  const overrideRoomId = useMemo(() => {
+    return query?.roomId ? `${roomId}-${query.roomId}` : roomId;
+  }, [query, roomId]);
+
+  return overrideRoomId;
+}
+
 export const WhatHackathon = () => {
+  const roomId = useOverrideRoomId("ouija-board");
+
   return (
     <div className="flex flex-col xl:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
       <div className="p-8 md:p-12  xl:w-[40%]">
@@ -50,18 +68,19 @@ export const WhatHackathon = () => {
       </div>
       <div className="p-8 md:p-12 w-full xl:w-[60%]">
         <h1 className="text-6xl text-accent-darker mb-6">
-          What is a hackathon?
+          {/* What is a hackathon? */}
+          Why Haunted House?
         </h1>
         <div className="space-y-8">
           <Definition />
-          <div className="flex flex-col xl:flex-row h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8">
-            <div className="xl:w-1/2">
-              <Projects />
-            </div>
-            <div className="xl:w-1/2">
-              <Vibe />
-            </div>
-          </div>
+          <RoomProvider
+            id={roomId}
+            initialPresence={{
+              cursor: null,
+            }}
+          >
+            <OuijaBoard />
+          </RoomProvider>
         </div>
       </div>
     </div>

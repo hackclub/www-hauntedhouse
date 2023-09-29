@@ -14,7 +14,7 @@ export const InvitationHero = () => {
         </button>
       </div>
       {/* <h1 className="text-7xl  text-accent-default">The Haunted House</h1> */}
-      <div className="pointer-events-none fixed bg-gradient-to-b from-transparent from-80% md:from-50% z-[99] to-black w-full h-full"></div>
+      <div className="pointer-events-none fixed bg-gradient-to-b from-transparent from-80% md:from-80% z-[99] to-black w-full h-full"></div>
       <div className="pointer-events-none  bg-gradient-to-b from-transparent h-[30%] absolute bottom-0 from-0% z-[99] to-black w-full"></div>
 
       {/* <div class=""></div> */}

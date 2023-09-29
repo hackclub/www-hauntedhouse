@@ -30,7 +30,7 @@ export default function Invitation() {
               isVisible ? setVisibleOnce(true) : "";
               return (
                 <FadeIn
-                  delay={500}
+                  delay={100}
                   visible={isVisible || visibleOnce}
                   transitionDuration={1000}
                 >
@@ -66,7 +66,10 @@ export default function Invitation() {
         </ScrollAnimation> */}
         </div>
         <div className="mb-12">
-          <CardSection />
+          <FadeIn delay={100} visible={visibleOnce} transitionDuration={1000}>
+            {" "}
+            <CardSection />
+          </FadeIn>
         </div>
         <div className="space-y-12">
           <div className="snap-end shrink-0">

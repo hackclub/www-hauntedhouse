@@ -50,8 +50,12 @@ p {
   letter-spacing: 0.7px;
 }
 
+.ouija {
+  cursor: url(/Subtractouijasmallestcursor.png), default;
+}
 body {
   font-family: "The Fright House", serif;
+  /* cursor: url(/ouijacursor.png), default; */
 
   background: #000;
 
@@ -329,4 +333,28 @@ body {
   100% {
     opacity: 0.1;
   }
+}
+
+.spotlight-container {
+  position: relative;
+  display: inline-block;
+}
+
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight-container:hover .spotlight {
+  opacity: 1;
 }

@@ -18,6 +18,28 @@ const items = [
     ),
   },
   {
+    header: "What has Hack Club done before?",
+    content: (
+      <div>
+        We have run multiple events of this scale around the world. Each one,
+        however is special in its own way. The summer of '21, we{" "}
+        <a
+          href="https://www.youtube.com/watch?v=2BID8_pGuqA"
+          className="underline"
+        >
+          chartered a train across America
+        </a>{" "}
+        and ran the world's longest hackathon on land. Earlier this year, we ran
+        an outdoors do-it-yourself camping adventure in Cabot, Vermont. Check it
+        out{" "}
+        <a href="TODO:outernet_documentary" className="underline">
+          here
+        </a>
+        !
+      </div>
+    ),
+  },
+  {
     header: "What do I need to bring to Haunted House?",
     content:
       "Your laptop, chargers, anything for your hack, toiletries, sleeping bags, and an open mind.",
