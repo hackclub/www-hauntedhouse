@@ -51,6 +51,28 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@liveblocks/client@1.4.0", "@liveblocks/client@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@liveblocks/client/-/client-1.4.0.tgz#9ea3ac2308514088098b4e2cefeb55c2c9425658"
+  integrity sha512-YoEUSK2TODtZ1fq0t2zIwtwPkQuLItdQtPoo6FFes6fXTPzDVtGf4CzzraTLBTS/i0SvzTNnUEqK4txDEXKHVQ==
+  dependencies:
+    "@liveblocks/core" "1.4.0"
+
+"@liveblocks/core@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@liveblocks/core/-/core-1.4.0.tgz#9761146226b0cf1a354bf577a1f9f4e563e7ea9c"
+  integrity sha512-LIgLLFyf4r9dyafGUmt+Dh3uGADwIlEIWVS4t0pbv7N4AGO6hXQ99igf7AczblhRoQlbCgVj4WGHhyqKMdXh6A==
+
+"@liveblocks/react@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@liveblocks/react/-/react-1.4.0.tgz#20465e6087fdca19db9c5a306c9e53da694b10fc"
+  integrity sha512-IJxmGxdXttwNIzBDWiJrm5Ygl/mK8XaibeiaobT3cUAqZwabyolWwsJEP7BjllRjt+m2ojAoz+bXEdrhdNxDaQ==
+  dependencies:
+    "@liveblocks/client" "1.4.0"
+    "@liveblocks/core" "1.4.0"
+    nanoid "^3"
+    use-sync-external-store "^1.2.0"
+
 "@next/env@13.4.19":
   version "13.4.19"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-13.4.19.tgz#46905b4e6f62da825b040343cbc233144e9578d3"
@@ -560,7 +582,7 @@ mz@^2.7.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nanoid@^3.3.4, nanoid@^3.3.6:
+nanoid@^3, nanoid@^3.3.4, nanoid@^3.3.6:
   version "3.3.6"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.6.tgz#443380c856d6e9f9824267d960b4236ad583ea4c"
   integrity sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==
@@ -768,6 +790,13 @@ react-fade-in@^2.0.1:
   resolved "https://registry.yarnpkg.com/react-fade-in/-/react-fade-in-2.0.1.tgz#b4bcd7dac63d6857ebcd68facbff2f5f9616278f"
   integrity sha512-oqS/WT4znaXEHmL+yo0IDUDY7uC9K4RP35j1SdRUEBspR09B2iIC0i8oJ28tPOr6Ez/L2aktF9p89j+DbsTVNw==
 
+react-flashlight@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-flashlight/-/react-flashlight-1.0.6.tgz#d2f0bda72164cbf7d5c78c75e4d812675cd47730"
+  integrity sha512-yszNWMAYwNvxvfvQViVMYEnoA56awHRxeqfW0QEGIyASgP/BhYP4mpaVgG6l/EVaCyj0sFHtByVYXQaQtIwq2A==
+  dependencies:
+    resize-observer-polyfill "^1.5.1"
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -805,6 +834,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve@^1.1.7, resolve@^1.22.2:
   version "1.22.4"
@@ -953,6 +987,11 @@ update-browserslist-db@^1.0.11:
   dependencies:
     escalade "^3.1.1"
     picocolors "^1.0.0"
+
+use-sync-external-store@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 util-deprecate@^1.0.2:
   version "1.0.2"

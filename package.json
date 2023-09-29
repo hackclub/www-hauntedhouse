@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@liveblocks/client": "^1.4.0",
+    "@liveblocks/react": "^1.4.0",
     "@szhsin/react-accordion": "^1.2.3",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
@@ -24,6 +26,7 @@
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "18.2.0",
     "react-fade-in": "^2.0.1",
+    "react-flashlight": "^1.0.6",
     "react-visibility-sensor": "^5.1.1",
     "tailwindcss": "3.3.3",
     "tailwindcss-fluid-type": "^2.0.3",

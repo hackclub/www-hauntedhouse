@@ -17,20 +17,20 @@ export default function Home() {
   });
   return (
     <main>
-      <div className="fixed top-[50px] left-0 z-40 flex items-center m-auto ml-[320px]">
+      <div className="relative z-40 max-w-[49rem] flex items-center m-auto">
         <button
           onClick={() => {
             setOpen(!open);
           }}
         >
-
-          <Image
-          alt="door"
-          width={100}
-          height={100}
-            src="/doors/door1.svg"
-            className={`h-[80vh] w-full bg-black transition duration-500 ease-in-out ${open && "-translate-x-[15vw]"
-              } `}
+          <img
+            alt="door"
+            width={100}
+            height={100}
+            src="/door1.png"
+            className={`translate-x-[50%] w-[50%]  h-[80vh] left-0 absolute top-[8vh] transition duration-500 ease-in-out ${
+              open && "-translate-x-[15vw]"
+            } `}
           />
         </button>
 
@@ -39,13 +39,14 @@ export default function Home() {
             setOpen(!open);
           }}
         >
-          <Image
-          width={100}
-          height={100}
-          alt="door"
-            src="/doors/door2.svg"
-            className={`h-[80vh] w-full transition bg-black duration-500 ease-in-out transform mt-10 ${open && "translate-x-[15vw]"
-              }`}
+          <img
+            width={100}
+            height={100}
+            alt="door"
+            src="/door2.png"
+            className={`w-[60%] translate-x-[60%]  h-[83vh] absolute transition top-[5vh] right-0  duration-500 ease-in-out transform mt-10 ${
+              open && "translate-x-[15vw]"
+            }`}
           />
         </button>
       </div>
@@ -56,7 +57,7 @@ export default function Home() {
           }}
           className={`mx-auto z-50 text-white text-lg ${!open && "hidden"}`}
         >
-        do you want to enter?
+          do you want to enter?
         </button>
       </div>
     </main>
