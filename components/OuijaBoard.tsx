@@ -23,6 +23,8 @@ export const OuijaBoard = () => {
   const callBackRef = useCallback((domNode) => {
     if (domNode) {
       setDimensions(domNode.getBoundingClientRect());
+    } else {
+      console.log("hi there");
     }
   }, []);
 
@@ -39,10 +41,11 @@ export const OuijaBoard = () => {
         setCoords([event.clientX, event.clientY]);
 
         // Update the user cursor position on every pointer move
+        // dimensions &&
         updateMyPresence({
           cursor: {
-            x: Math.round(event.clientX - dimensions.x),
-            y: Math.round(event.clientY - dimensions.y),
+            x: Math.round(event.clientX),
+            y: Math.round(event.clientY),
           },
         });
       }}
