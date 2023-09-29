@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <main>
       <audio ref={audioRef} src={"/doors/dooraudio.mp3"} />
-      <div className="fixed sm:top-[60px] left-0 z-40 flex items-center m-auto sm:ml-[320px]">
+      <div className="fixed sm:top-[80px] left-0 z-40 flex items-center m-auto sm:ml-[360px]">
         <button
         onClick={handleClick}
         >
@@ -68,7 +68,7 @@ export default function Home() {
           width={100}
           height={100}
             src="/doors/door1.svg"
-            className={`sm:h-[80vh] w-full transition duration-500 ease-in-out ${open && "-translate-x-[15vw]"
+            className={`sm:h-[80vh] w-full transition duration-500 ease-in-out ${open && "-translate-x-[15vw] origin-left"
               } `}
           />
         </button>
@@ -81,7 +81,7 @@ export default function Home() {
           height={100}
           alt="door"
             src="/doors/door2.svg"
-            className={`sm:h-[80vh] w-full transition sm:bg-black duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw] sm:bg-transparent"
+            className={`sm:h-[80vh] w-full transition duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw]"
               }`}
           />
         </button>
