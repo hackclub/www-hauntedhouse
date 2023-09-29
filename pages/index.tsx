@@ -86,7 +86,7 @@ export default function Home() {
           />
         </button>
       </div>
-      <div className="fixed sm:top-[80px] left-0 z-40 sm:flex items-center m-auto sm:ml-[360px] hidden">
+      <div className="fixed sm:top-[80px] left-0 z-40 sm:flex items-center m-auto sm:ml-[310px] hidden">
         <button
         onClick={handleClick}
         >
