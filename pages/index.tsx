@@ -17,16 +17,19 @@ export default function Home() {
   });
   return (
     <main>
-      <div className="fixed top-0 left-0 z-40 flex">
+      <div className="fixed top-[50px] left-0 z-40 flex items-center m-auto ml-[320px]">
         <button
           onClick={() => {
             setOpen(!open);
           }}
         >
 
-          <img
-            src="/door.png"
-            className={`h-screen w-[50vw] bg-black text-white transition duration-500 ease-in-out ${open && "-translate-x-[40vw]"
+          <Image
+          alt="door"
+          width={100}
+          height={100}
+            src="/doors/door1.svg"
+            className={`h-[80vh] w-full bg-black transition duration-500 ease-in-out ${open && "-translate-x-[15vw]"
               } `}
           />
         </button>
@@ -36,14 +39,17 @@ export default function Home() {
             setOpen(!open);
           }}
         >
-          <img
-            src="/door.png"
-            className={`h-screen w-[50vw] bg-black text-white transition  duration-500 ease-in-out transform ${open && "translate-x-[40vw]"
+          <Image
+          width={100}
+          height={100}
+          alt="door"
+            src="/doors/door2.svg"
+            className={`h-[80vh] w-full transition bg-black duration-500 ease-in-out transform mt-10 ${open && "translate-x-[15vw]"
               }`}
           />
         </button>
       </div>
-      <div className="flex items-center h-[100vh] w-screen bg-[url('/doors/stairs.jpg')] bg-contain bg-no-repeat bg-center">
+      <div className="flex items-center h-[100vh] w-screen bg-[url('/doors/stairs.jpg')] bg-cover bg-no-repeat bg-center">
         <button
           onClick={() => {
             alert("hi");
