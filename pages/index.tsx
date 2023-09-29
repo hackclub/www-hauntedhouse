@@ -43,14 +43,14 @@ export default function Home() {
           />
         </button>
       </div>
-      <div className="flex items-center h-[100vh] w-screen bg-[url('/doors/doorbg.png')] bg-contain bg-no-repeat bg-center">
+      <div className="flex items-center h-[100vh] w-screen bg-[url('/doors/stairs.jpg')] bg-contain bg-no-repeat bg-center">
         <button
           onClick={() => {
             alert("hi");
           }}
-          className={`mx-auto z-50 ${!open && "hidden"}`}
+          className={`mx-auto z-50 text-white text-lg ${!open && "hidden"}`}
         >
-          hi
+        do you want to enter?
         </button>
       </div>
     </main>
