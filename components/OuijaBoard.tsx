@@ -41,36 +41,36 @@ export const OuijaBoard = () => {
       }
       className="flex ouija flex-col xl:flex-row h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
     >
-      <ReactFlashlight
+      {/* <ReactFlashlight
         className="z-0 absolute"
         showCursor
         initialPosition={{ x: 10, y: 10 }}
-      >
-        {
-          /**
-           * Iterate over other users and display a cursor based on their presence
-           */
-          others.map(({ connectionId, presence }) => {
-            if (presence.cursor === null) {
-              return null;
-            }
+      > */}
+      {
+        /**
+         * Iterate over other users and display a cursor based on their presence
+         */
+        others.map(({ connectionId, presence }) => {
+          if (presence.cursor === null) {
+            return null;
+          }
 
-            return (
-              <Cursor
-                key={`cursor-${connectionId}`}
-                // connectionId is an integer that is incremented at every new connections
-                // Assigning a color with a modulo makes sure that a specific user has the same colors on every clients
-                color={COLORS[connectionId % COLORS.length]}
-                x={presence.cursor.x}
-                y={presence.cursor.y}
-              />
-            );
-          })
-        }
-        <div className="border-10 rounded-lg border-accent-default">
-          <img src="/ouijaboard.jpeg" className="w-full" alt="Ouija Board" />
-        </div>
-      </ReactFlashlight>
+          return (
+            <Cursor
+              key={`cursor-${connectionId}`}
+              // connectionId is an integer that is incremented at every new connections
+              // Assigning a color with a modulo makes sure that a specific user has the same colors on every clients
+              color={COLORS[connectionId % COLORS.length]}
+              x={presence.cursor.x}
+              y={presence.cursor.y}
+            />
+          );
+        })
+      }
+      <div className="border-10 rounded-lg border-accent-default">
+        <img src="/ouijaboard.jpeg" className="w-full" alt="Ouija Board" />
+      </div>
+      {/* </ReactFlashlight> */}
     </div>
   );
 };
