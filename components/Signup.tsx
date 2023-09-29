@@ -1,4 +1,21 @@
+import { useState } from "react";
+
 export const Signup = () => {
+
+  const minAge = 13; 
+  const maxAge = 18;
+  const [age, setAge] = useState(minAge);
+
+  const handleAgeInput = (event) => {
+   let inputValue = parseInt(event.target.value, 10);
+
+    inputValue = Math.min(maxAge, Math.max(minAge, inputValue));
+    
+    if (!isNaN(inputValue) && inputValue >= minAge && inputValue <= maxAge) {
+      setAge(inputValue);
+    }
+  };
+
   return (
     <div>
       <div className="p-8 md:p-12 w-full z-[99]">
@@ -32,6 +49,11 @@ export const Signup = () => {
                 type="number"
                 className="text-xl px-4 py-2 bg-beige text-blackish placeholder-gray-500 tracking-wide border-2 rounded-lg border-accent-darker "
                 placeholder="Ex: 16"
+                min={minAge} 
+                max={maxAge}
+                onInput={handleAgeInput} 
+                inputMode="numeric" 
+                pattern="[0-9]*"
               />
             </div>
             <input
