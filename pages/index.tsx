@@ -40,7 +40,7 @@ export default function Home() {
     if (clickedOnce && open) {
       timeoutId = setTimeout(() => {
         router.push("/invitation");
-      }, 2000); 
+      }, 1000); 
     }
 
     return () => {
@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <main>
       <audio ref={audioRef} src={"/doors/dooraudio.mp3"} />
-      <div className="fixed top-[60px] left-0 z-40 flex items-center m-auto sm:ml-[360px] sm:hidden">
+      <div className="fixed top-[60px] left-0 z-40 flex items-center  sm:hidden">
         <button
         onClick={handleClick}
         >
