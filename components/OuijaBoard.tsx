@@ -33,19 +33,22 @@ export const OuijaBoard = () => {
 
   return (
     <div
-      onPointerMove={(event) => {
-        event.preventDefault();
-
-        setCoords([event.clientX, event.clientY]);
-
-        // Update the user cursor position on every pointer move
+    onPointerMove={(event) => {
+      event.preventDefault();
+    
+      setCoords([event.clientX, event.clientY]);
+    
+      // Check if dimensions is available before updating cursor position
+      if (dimensions) {
         updateMyPresence({
           cursor: {
             x: Math.round(event.clientX - dimensions.x),
             y: Math.round(event.clientY - dimensions.y),
           },
         });
-      }}
+      }
+    }}
+    
       onPointerLeave={() =>
         // When the pointer goes out, set cursor to null
         updateMyPresence({
