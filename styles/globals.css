@@ -55,6 +55,8 @@ p {
 }
 body {
   font-family: "The Fright House", serif;
+
+  overflow-x: hidden;
   /* cursor: url(/ouijacursor.png), default; */
 
   background: #000;
