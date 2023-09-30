@@ -2,127 +2,95 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 
 import { motion, useScroll } from "framer-motion";
-import { useRef, useState,useEffect  } from "react";
-import { useRouter } from "next/router";
+import { useRef, useState } from "react";
 
-
+import Youtube from "react-youtube";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const ref = useRef(null);
 
+  const [open, setOpen] = useState(false);
 
   const { scrollYProgress } = useScroll({
     // target: ref,
     // offset: ["end end", "start start"],
   });
-
-
-  const router = useRouter(); 
-
-  const [open, setOpen] = useState(false);
-  const [clickedOnce, setClickedOnce] = useState(false);
-
-  const audioRef = useRef(null);
-
-  useEffect(() => {
-
-    if (open) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
-
-    let timeoutId;
-
-    if (clickedOnce && open) {
-      timeoutId = setTimeout(() => {
-        router.push("/invitation");
-      }, 1000); 
-    }
-
-    return () => {
-      clearTimeout(timeoutId);  
-    };
-  }, [open, clickedOnce, router]);
-
-  const handleClick = () => {
-    if (!clickedOnce) {
-      setClickedOnce(true);
-    }
-    setOpen(!open);
-  };
-
+  function _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.playVideo();
+  }
   return (
-    <main>
-      <audio ref={audioRef} src={"/doors/dooraudio.mp3"} />
-      <div className="fixed top-[60px] left-0 z-40 flex items-center  sm:hidden">
-        <button
-        onClick={handleClick}
-        >
+    // <main>
+    //   <div className="relative z-40 max-w-[49rem] flex items-center m-auto">
+    //     <button
+    //       onClick={() => {
+    //         setOpen(!open);
+    //       }}
+    //     >
+    //       <img
+    //         alt="door"
+    //         width={100}
+    //         height={100}
+    //         src="/door1.png"
+    //         className={`translate-x-[50%] w-[50%]  h-[80vh] left-0 absolute top-[8vh] transition duration-500 ease-in-out ${
+    //           open && "-translate-x-[15vw]"
+    //         } `}
+    //       />
+    //     </button>
 
-          <Image
-          alt="door"
-          width={100}
-          height={100}
-            src="/doors/mobiledoor1.svg"
-            className={`h-[80vh] w-full transition duration-500 ease-in-out ${open && "-translate-x-[15vw] origin-left"
-              } `}
-          />
-        </button>
+    //     <button
+    //       onClick={() => {
+    //         setOpen(!open);
+    //       }}
+    //     >
+    //       <img
+    //         width={100}
+    //         height={100}
+    //         alt="door"
+    //         src="/door2.png"
+    //         className={`w-[60%] min translate-x-[60%]  h-[83vh] absolute transition top-[5vh] right-0  duration-500 ease-in-out transform mt-10 ${
+    //           open && "translate-x-[15vw]"
+    //         }`}
+    //       />
+    //     </button>
+    //   </div>
+    //   <div className="flex items-center h-[100vh] w-screen bg-[url('/doors/stairs.jpg')] bg-cover bg-no-repeat bg-center">
+    //     <button
+    //       onClick={() => {
+    //         alert("hi");
+    //       }}
+    //       className={`mx-auto z-50 text-white text-lg ${!open && "hidden"}`}
+    //     >
+    //       do you want to enter?
+    //     </button>
+    //   </div>
+    // </main>
 
-        <button
-        onClick={handleClick}
-        >
-          <Image
-          width={100}
-          height={100}
-          alt="door"
-            src="/doors/mobiledoor2.svg"
-            className={`h-[80vh] w-full transition duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw]"
-              }`}
-          />
-        </button>
-      </div>
-      <div className="fixed sm:top-[80px] left-0 z-40 sm:flex items-center m-auto sm:ml-[310px] hidden">
-        <button
-        onClick={handleClick}
-        >
+    <main className="h-screen relative">
+      {/* <video autoPlay muted className="doorVideo">
+        <source
+          src="https://cloud-5424abhyi-hack-club-bot.vercel.app/0exported_video_compressed.mp4"
+          type="video/mp4"
+        />
+      </video> */}
 
-          <Image
-          alt="door"
-          width={100}
-          height={100}
-            src="/doors/door1.svg"
-            className={`sm:h-[80vh] w-full transition duration-500 ease-in-out ${open && "-translate-x-[15vw] origin-left"
-              } `}
-          />
-        </button>
-
-        <button
-        onClick={handleClick}
-        >
-          <Image
-          width={100}
-          height={100}
-          alt="door"
-            src="/doors/door2.svg"
-            className={`sm:h-[80vh] w-full transition duration-500 ease-in-out transform  z-50 ${open && "translate-x-[15vw]"
-              }`}
-          />
-        </button>
-      </div>
-      <motion.div className="flex items-center h-[100vh] w-screen bg-[url('/doors/stairs.jpg')] bg-cover bg-no-repeat bg-center"
-         initial={{ scale: 1 }}
-         animate={{ scale: open ? 1.2 : 1 }}
-         transition={{ duration: 0.5 }}
-      >
-      
-      </motion.div>
+      <Youtube
+        videoId="VaNuWtcJOkc"
+        className="doorVideo"
+        opts={{
+          playerVars: {
+            playsinline: 1,
+            controls: 0,
+            autoplay: 1,
+            // controls: 0,
+            // showinfo: 0,
+            // loop: 1,
+          },
+        }}
+        onReady={_onReady}
+      />
     </main>
   );
 }
-
-

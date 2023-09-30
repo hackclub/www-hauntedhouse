@@ -26,9 +26,10 @@
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "18.2.0",
     "react-fade-in": "^2.0.1",
-    "react-router-dom": "^6.16.0",
     "react-flashlight": "^1.0.6",
+    "react-router-dom": "^6.16.0",
     "react-visibility-sensor": "^5.1.1",
+    "react-youtube": "^10.1.0",
     "tailwindcss": "3.3.3",
     "tailwindcss-fluid-type": "^2.0.3",
     "typescript": "5.2.2"
