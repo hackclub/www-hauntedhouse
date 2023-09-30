@@ -1,6 +1,6 @@
 export const InvitationHero = () => {
   return (
-    <div className="bg-[url('/alleyway-background.png')] bg-left-top w-screen h-screen justify-center flex flex-col relative items-center">
+    <div className="bg-[url('/alleyway-background.webp')] bg-left-top w-screen h-screen justify-center flex flex-col relative items-center">
       <div className="px-6 w-[80%] max-w-5xl">
         <button className="card relative aspect-[1421/904] h-auto w-full  mx-auto">
           <img
@@ -8,7 +8,7 @@ export const InvitationHero = () => {
             className={`card-side front shadow-2xl shadow-red-500  border-[0.8rem]   transition border-white`}
           />
           <img
-            src="/postcard.svg"
+            src="/smallerpostcard.webp"
             className={`card-side back shadow-2xl shadow-red-500  border-[0.8rem]   transition border-white`}
           />
         </button>

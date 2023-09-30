@@ -29,8 +29,8 @@ export default function Cursor({ color, x, y }) {
 // SVG cursor shape
 function CursorSvg({ color }) {
   return (
-   <div>
-    <Image src="/ouijasmallish.png" alt="cursor" width={32} height={44} />
+    <div>
+      <Image src="/ouijasmallish.png" alt="cursor" width={32} height={44} />
     </div>
   );
 }

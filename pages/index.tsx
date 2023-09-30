@@ -2,14 +2,17 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 
 import { motion, useScroll } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Youtube from "react-youtube";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const ref = useRef(null);
+
+  const router = useRouter();
 
   const [open, setOpen] = useState(false);
 
@@ -17,6 +20,12 @@ export default function Home() {
     // target: ref,
     // offset: ["end end", "start start"],
   });
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/invitation");
+    }, 5500);
+  }, []);
 
   return (
     // <main>
