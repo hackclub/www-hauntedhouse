@@ -40,7 +40,6 @@ export const OuijaBoard = () => {
 
     const { clientX, clientY } = event;
 
-    
     const normalizedCursor = normalizeCursor(clientX, clientY);
     setNormalizedCoords(normalizedCursor);
 
@@ -86,13 +85,20 @@ export const OuijaBoard = () => {
       onPointerLeave={handlePointerLeave}
       className="relative flex ouija flex-col xl:flex-row h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
     >
-      <ReactFlashlight className="z-0" showCursor initialPosition={{ x: 10, y: 10 }}>
-        <div ref={(node) => (callBackRef.current = node)} className="border-10 rounded-lg border-accent-default">
+      <ReactFlashlight
+        className="z-0"
+        showCursor
+        initialPosition={{ x: 10, y: 10 }}
+      >
+        <div
+          ref={(node) => (callBackRef.current = node)}
+          className="border-10 rounded-lg border-accent-default"
+        >
           <img src="/ouijaboard.jpeg" className="w-full" alt="Ouija Board" />
         </div>
       </ReactFlashlight>
 
-      <div className="absolute w-full h-full">
+      <div className="absolute w-full h-full overflow-x-hidden">
         {others.map(({ connectionId, presence }) => {
           if (presence.cursor === null) {
             return null;
