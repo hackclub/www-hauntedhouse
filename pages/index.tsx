@@ -17,10 +17,7 @@ export default function Home() {
     // target: ref,
     // offset: ["end end", "start start"],
   });
-  function _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.playVideo();
-  }
+
   return (
     // <main>
     //   <div className="relative z-40 max-w-[49rem] flex items-center m-auto">
@@ -69,14 +66,11 @@ export default function Home() {
     // </main>
 
     <main className="h-screen relative">
-      {/* <video autoPlay muted className="doorVideo">
-        <source
-          src="https://cloud-5424abhyi-hack-club-bot.vercel.app/0exported_video_compressed.mp4"
-          type="video/mp4"
-        />
-      </video> */}
+      <video autoPlay muted className="doorVideo">
+        <source src="/exported_video.webm" type="video/webm" />
+      </video>
 
-      <Youtube
+      {/* <Youtube
         videoId="VaNuWtcJOkc"
         className="doorVideo"
         opts={{
@@ -90,7 +84,7 @@ export default function Home() {
           },
         }}
         onReady={_onReady}
-      />
+      /> */}
     </main>
   );
 }

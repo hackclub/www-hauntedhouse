@@ -1,23 +1,40 @@
 import { useState } from "react";
 
 export const Signup = () => {
-
-  const minAge = 13; 
+  const minAge = 13;
   const maxAge = 18;
   const [age, setAge] = useState(minAge);
 
   const handleAgeInput = (event) => {
-   let inputValue = parseInt(event.target.value, 10);
+    let inputValue = parseInt(event.target.value, 10);
 
     inputValue = Math.min(maxAge, Math.max(minAge, inputValue));
-    
+
     if (!isNaN(inputValue) && inputValue >= minAge && inputValue <= maxAge) {
       setAge(inputValue);
     }
   };
 
+  const handleSubmit = (event) => {
+    const age = parseInt(event.target.age.value, 10);
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+
+    console.log(age, name, email);
+    event.preventDefault();
+
+    fetch("/api/submit", {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        email,
+        age,
+      }),
+    });
+  };
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div className="p-8 md:p-12 w-full z-[99]">
         <div className="max-w-xl mx-auto">
           <div className="mb-8">
@@ -30,6 +47,7 @@ export const Signup = () => {
               <label className="text-2xl font-black text-beige">Email</label>
               <input
                 type="email"
+                name="email"
                 className="text-xl px-4 py-2 bg-beige text-blackish placeholder-gray-500 tracking-wide border-2 rounded-lg border-accent-darker "
                 placeholder="Ex: orpheus@hackclub.com"
               />
@@ -38,6 +56,7 @@ export const Signup = () => {
               <label className="text-2xl font-black text-beige">Name</label>
               <input
                 type="text"
+                name="name"
                 className="text-xl px-4 py-2 bg-beige text-blackish placeholder-gray-500 tracking-wide border-2 rounded-lg border-accent-darker "
                 placeholder="Ex: Orpheus Smith"
               />
@@ -49,10 +68,11 @@ export const Signup = () => {
                 type="number"
                 className="text-xl px-4 py-2 bg-beige text-blackish placeholder-gray-500 tracking-wide border-2 rounded-lg border-accent-darker "
                 placeholder="Ex: 16"
-                min={minAge} 
+                min={minAge}
+                name="age"
                 max={maxAge}
-                onInput={handleAgeInput} 
-                inputMode="numeric" 
+                onInput={handleAgeInput}
+                inputMode="numeric"
                 pattern="[0-9]*"
               />
             </div>
@@ -64,6 +84,6 @@ export const Signup = () => {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
