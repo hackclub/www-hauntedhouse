@@ -1,7 +1,7 @@
 import { useMyPresence, useOthers } from "@/liveblocks.config";
 import { ReactFlashlight } from "react-flashlight";
 import Cursor from "./Cursor";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const COLORS = [
   "#E57373",
@@ -15,60 +15,79 @@ const COLORS = [
 ];
 
 export const OuijaBoard = () => {
-  const [coords, setCoords] = useState([10, 10]);
+  const [normalizedCoords, setNormalizedCoords] = useState({ x: 0, y: 0 });
   const [{ cursor }, updateMyPresence] = useMyPresence();
 
   const [dimensions, setDimensions] = useState(null);
+  const callBackRef = useRef(null);
 
-  const callBackRef = useCallback((domNode) => {
-    if (domNode) {
-      setDimensions(domNode.getBoundingClientRect());
-    } else {
-      console.log("hi there");
+  const normalizeCursor = (x, y) => {
+    if (!dimensions) {
+      return { x, y };
     }
-  }, []);
 
-  /**
-   * Return all the other users in the room and their presence (a cursor position in this case)
-   */
+    const normalizedX = (x - dimensions.left) / dimensions.width;
+    const normalizedY = (y - dimensions.top) / dimensions.height;
+
+    return {
+      x: normalizedX,
+      y: normalizedY,
+    };
+  };
+
+  const handlePointerMove = (event) => {
+    event.preventDefault();
+
+    const { clientX, clientY } = event;
+
+    
+    const normalizedCursor = normalizeCursor(clientX, clientY);
+    setNormalizedCoords(normalizedCursor);
+
+    // Update cursor position in MyPresence
+    updateMyPresence({
+      cursor: {
+        x: normalizedCursor.x,
+        y: normalizedCursor.y,
+      },
+    });
+  };
+
+  const handlePointerLeave = () => {
+    // When the pointer goes out, set cursor to null
+    updateMyPresence({
+      cursor: null,
+    });
+  };
+
   const others = useOthers();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (callBackRef.current) {
+        setDimensions(callBackRef.current.getBoundingClientRect());
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    if (callBackRef.current) {
+      setDimensions(callBackRef.current.getBoundingClientRect());
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div
-      onPointerMove={(event) => {
-        event.preventDefault();
-
-        setCoords([event.clientX, event.clientY]);
-
-        // Check if dimensions is available before updating cursor position
-
-        updateMyPresence({
-          cursor: {
-            x: Math.round(event.clientX),
-            y: Math.round(event.clientY),
-          },
-        });
-      }}
-      onPointerLeave={() =>
-        // When the pointer goes out, set cursor to null
-        updateMyPresence({
-          cursor: null,
-        })
-      }
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
       className="relative flex ouija flex-col xl:flex-row h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
     >
-      <ReactFlashlight
-        className="z-0"
-        showCursor
-        initialPosition={{ x: 10, y: 10 }}
-      >
-        {/**
-         * Iterate over other users and display a cursor based on their presence
-         */}
-        <div
-          ref={callBackRef}
-          className="border-10 rounded-lg border-accent-default"
-        >
+      <ReactFlashlight className="z-0" showCursor initialPosition={{ x: 10, y: 10 }}>
+        <div ref={(node) => (callBackRef.current = node)} className="border-10 rounded-lg border-accent-default">
           <img src="/ouijaboard.jpeg" className="w-full" alt="Ouija Board" />
         </div>
       </ReactFlashlight>
@@ -81,8 +100,6 @@ export const OuijaBoard = () => {
           return (
             <Cursor
               key={`cursor-${connectionId}`}
-              // connectionId is an integer that is incremented at every new connections
-              // Assigning a color with a modulo makes sure that a specific user has the same colors on every clients
               color={COLORS[connectionId % COLORS.length]}
               x={presence.cursor.x}
               y={presence.cursor.y}
