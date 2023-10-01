@@ -62,9 +62,9 @@ export const Signup = ({ bgPlay, bgStop }) => {
 
       setEndPage(true);
 
-      await bgStop();
+      // await bgStop();
       await play();
-      await bgPlay();
+      // await bgPlay();
 
       event.target.reset();
     }
