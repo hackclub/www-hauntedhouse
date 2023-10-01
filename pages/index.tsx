@@ -106,12 +106,17 @@ export default function Home() {
       </video>
 
       {showImage && (
+        <motion.div
+        initial={{ opacity: 0.2 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        >
       <img src={"/entercard.webp"}
        alt="entercard"
       onClick={handleImageClick}
         className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
          height={700} width={700}/>
-
+</motion.div>
       )}
       {/* <Youtube
         videoId="VaNuWtcJOkc"
