@@ -194,9 +194,9 @@ export const Signup = () => {
                   className={`
                 ${
                   showError === "" ? "p-6" : ""
-                } p-6 fixed max-w-xl shadow-2xl top-5 lg:bottom-5 right-5  rounded-lg bg-accent-darker `}
+                } p-6 fixed max-w-xl shadow-2xl top-5 h-min lg:bottom-5 right-5  rounded-lg bg-accent-darker `}
                 >
-                  <p className="text-beige text-lg">{showError}</p>
+                  <p className="text-beige text-lg h-min">{showError}</p>
                 </div>
               </div>
               <input
