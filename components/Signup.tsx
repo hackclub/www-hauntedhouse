@@ -136,14 +136,19 @@ export const Signup = ({ bgPlay, bgStop }) => {
       <form id="form" onSubmit={handleSubmit}>
         <div className="p-8 md:p-12 w-full z-[99]">
           <div className="max-w-xl mx-auto">
-            <div className="mb-8">
+            <div className="mb-12 space-y-4">
               <span className="text-accent-default text-5xl md:text-6xl text-center">
                 It's time to enter...
               </span>
 
-              <span className="text-beige text-lg md:text-6xl text-center">
-                hi
-              </span>
+              <p className="text-beige text-2xl mt-2">
+                Haunted House is open to anyone anywhere, 18 or younger.
+                Participation, including meals, costs nothing and{" "}
+                <a href="https://gas.hackclub.com" className="underline">
+                  travel reimbursements
+                </a>{" "}
+                are available.
+              </p>
             </div>
             <div className="space-y-5" id="signup">
               <div className="flex-col flex space-y-1">
