@@ -22,7 +22,7 @@ export const Satellites = () => {
       <div className="p-8 md:p-12 lg:w-1/2 flex justify-center items-center">
         {/* <img src="/map.png" /> */}
         <video autoPlay loop muted>
-          <source src="/ubercarvid_noaudio.mp4" type="video/mp4" />
+          <source src="/ubercarvid_noaudio.webm" type="video/webm" />
 
           <img src="/map.png" />
         </video>

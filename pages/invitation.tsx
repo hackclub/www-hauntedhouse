@@ -1,5 +1,6 @@
 import { CardSection } from "@/components/CardSection";
 import { Faq } from "@/components/Faq";
+import { Footer } from "@/components/Footer";
 import { InvitationHero } from "@/components/InvitationHero";
 import { Nav } from "@/components/Nav";
 import { Satellites } from "@/components/Satellites";
@@ -7,10 +8,11 @@ import { Signup } from "@/components/Signup";
 import { WhatHackathon } from "@/components/WhatHackathon";
 import { WhatIsThis } from "@/components/WhatIsThis";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import AnimatedCursor from "react-animated-cursor";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import VisibilitySensor from "react-visibility-sensor";
+import useSound from "use-sound";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
@@ -18,11 +20,17 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 
 export default function Invitation() {
   const [visibleOnce, setVisibleOnce] = useState(false);
+
+  const [play, { stop }] = useSound("/haunted.mp3");
+
+  useEffect(() => {}, []);
   return (
     <>
       <Nav />
       <div className="">
         <InvitationHero />
+
+        <button onClick={play}>hi</button>
 
         <div className="mt-12 px-4">
           <VisibilitySensor>
@@ -83,7 +91,8 @@ export default function Invitation() {
 
           <Faq />
         </div>
-        <Signup />
+        <Signup bgPlay={play} bgStop={stop} />
+        <Footer />
       </div>
     </>
   );

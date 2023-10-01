@@ -4,7 +4,7 @@ import useSound from "use-sound";
 
 // import mwahaha from "../public/mwahaha.mp3";
 
-export const Signup = () => {
+export const Signup = ({ bgPlay, bgStop }) => {
   const minAge = 13;
   const maxAge = 18;
   const [age, setAge] = useState(minAge);
@@ -61,7 +61,11 @@ export const Signup = () => {
       });
 
       setEndPage(true);
+
+      await bgStop();
       await play();
+      await bgPlay();
+
       event.target.reset();
     }
 
