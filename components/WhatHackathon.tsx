@@ -22,8 +22,8 @@ export const WhatHackathon = () => {
   const roomId = useOverrideRoomId("ouija-board");
 
   return (
-    <div className="flex flex-col xl:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
-      <div className="p-8 md:p-12  xl:w-[40%]">
+    <div className="flex flex-col lg:flex-row border-t  border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
+      <div className="p-8 md:p-12  lg:w-[40%]">
         {/* <img src="/cardimages/tape.png" /> */}
         <div className="relative pt-10 py-2 px-2 flex flex-col h-full justify-center items-center">
           <img
@@ -41,7 +41,7 @@ export const WhatHackathon = () => {
             />
             <div className="overflow-hidden relative">
               <div
-                className={` bg-[url('/outernet-127.png')] bg-center bg-cover aspect-[90/100] xl:aspect-[94/100] w-full`}
+                className={` bg-[url('/outernet-127.png')] bg-center bg-cover aspect-[90/100] lg:aspect-[94/100] w-full`}
               />
 
               <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
@@ -66,7 +66,7 @@ export const WhatHackathon = () => {
           </div>
         </div>
       </div>
-      <div className="p-8 md:p-12 w-full xl:w-[60%]">
+      <div className="p-8 md:p-12 w-full lg:w-[60%]">
         <h1 className="text-6xl text-accent-darker mb-6">
           {/* What is a hackathon? */}
           Why Haunted House?
