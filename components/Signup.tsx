@@ -140,6 +140,10 @@ export const Signup = ({ bgPlay, bgStop }) => {
               <span className="text-accent-default text-5xl md:text-6xl text-center">
                 It's time to enter...
               </span>
+
+              <span className="text-beige text-lg md:text-6xl text-center">
+                hi
+              </span>
             </div>
             <div className="space-y-5" id="signup">
               <div className="flex-col flex space-y-1">
