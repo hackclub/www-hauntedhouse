@@ -23,9 +23,35 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-      router.push("/invitation");
+     // router.push("/invitation");
     }, 5500);
   }, []);
+
+
+  const [showImage, setShowImage] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+  
+    const timer = setTimeout(() => {
+      setShowImage(true);
+      videoRef.current.pause(); 
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleImageClick = () => {
+    setShowImage(false); 
+    videoRef.current.play(); 
+  };
+
+  const handleVideoEnd = () => {
+    router.push('/invitation');
+  };
+
+
+
 
   return (
     // <main>
@@ -75,10 +101,18 @@ export default function Home() {
     // </main>
 
     <main className="h-screen relative">
-      <video autoPlay muted className="doorVideo">
+      <video autoPlay muted   ref={videoRef} className="doorVideo" onEnded={handleVideoEnd}>
         <source src="/exported_video.webm" type="video/webm" />
       </video>
 
+      {showImage && (
+      <img src={"/entercard.webp"}
+       alt="entercard"
+      onClick={handleImageClick}
+        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+         height={700} width={700}/>
+
+      )}
       {/* <Youtube
         videoId="VaNuWtcJOkc"
         className="doorVideo"
