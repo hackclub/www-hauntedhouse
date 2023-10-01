@@ -16,7 +16,8 @@ const COLORS = [
 
 export const OuijaBoard = () => {
   const [normalizedCoords, setNormalizedCoords] = useState({ x: 0, y: 0 });
-  const [{ cursor }, updateMyPresence] = useMyPresence();
+  const [_, updateMyPresence] = useMyPresence();
+  const [location, setLocation] = useState(null);
 
   const [dimensions, setDimensions] = useState(null);
   const callBackRef = useRef<HTMLDivElement>(null);
@@ -44,8 +45,20 @@ export const OuijaBoard = () => {
     updateMyPresence({
       dimensions: { width, height },
       cursor: { x: normalizedCursor.x * width, y: normalizedCursor.y * height },
+      location,
     });
   };
+
+  useEffect(() => {
+    if (location) return;
+
+    fetch("http://ip-api.com/json", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => setLocation(data));
+  }, []);
 
   const others = useOthers();
 
@@ -84,10 +97,9 @@ export const OuijaBoard = () => {
             const currentWidth = dimensions.width;
             const currentHeight = dimensions.height;
 
-            console.log(presence.cursor);
-
             return (
               <Cursor
+                location={presence.location}
                 key={`cursor-${connectionId}`}
                 color={COLORS[connectionId % COLORS.length]}
                 x={presence.cursor.x * (currentWidth / presence.dimensions.width)}

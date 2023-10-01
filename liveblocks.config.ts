@@ -12,6 +12,7 @@ const client = createClient({
 type Presence = {
   dimensions: { width: number; height: number };
   cursor: { x: number; y: number } | null;
+  location: { city: string, region: string, country: string }
 };
 
 // Optionally, Storage represents the shared document that persists in the

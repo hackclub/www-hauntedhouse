@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 // Spring animated cursor
-export default function Cursor({ color, x, y }) {
+export default function Cursor({ color, x, y, location }) {
   return (
     <motion.div
+      className="flex items-center flex-col"
       initial={{ x, y }}
       animate={{ x, y }}
       transition={{
@@ -15,6 +16,14 @@ export default function Cursor({ color, x, y }) {
       }}
     >
       <CursorSvg color={color} />
+      {location?.city && (
+        <span
+          style={{ backgroundColor: color }}
+          className="text-white font-bold px-2 py-1 rounded-lg mt-2"
+        >
+          {location.city}, {location.region}, {location.country}
+        </span>
+      )}
     </motion.div>
   );
 }
