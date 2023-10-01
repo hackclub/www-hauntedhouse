@@ -4,7 +4,7 @@ export const InvitationHero = () => {
       <div className="px-6 w-[80%] max-w-5xl">
         <button className="card relative aspect-[1421/904] h-auto w-full  mx-auto">
           <img
-            src="/quainthouse.png"
+            src="/quainthouse.webp"
             className={`card-side front shadow-2xl shadow-red-500  border-[0.8rem]   transition border-white`}
           />
           <img
