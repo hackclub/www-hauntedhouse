@@ -32,7 +32,10 @@ const items = [
         and ran the world's longest hackathon on land. Earlier this year, we ran
         an outdoors do-it-yourself camping adventure in Cabot, Vermont. Check it
         out{" "}
-        <a href="TODO:outernet_documentary" className="underline">
+        <a
+          href="https://www.youtube.com/watch?v=O1s5HqSqKi0"
+          className="underline"
+        >
           here
         </a>
         !
