@@ -37,12 +37,12 @@ export const WhatHackathon = () => {
             />
             <div className=" bg-accent-default pb-4 relative aspect-[83/100] w-full border border-accent-darker shadow-2xl max-w-lg mx-auto my-auto p-[30px]">
               <img
-                src="/cardimages/tape.png"
+                src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[15%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
                 <div
-                  className={` bg-[url('/outernet-127.png')] bg-center bg-cover aspect-[90/100] lg:aspect-[94/100] w-full`}
+                  className={` bg-[url('/outernet-127.webp')] bg-center bg-cover aspect-[90/100] lg:aspect-[94/100] w-full`}
                 />
                 <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
                   Flamethrower at{" "}
@@ -53,13 +53,13 @@ export const WhatHackathon = () => {
               </div>
               <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
                 <img
-                  src="/cardimages/witch.png"
+                  src="/cardimages/witch.webp"
                   className="absolute z-0 -left-5 -bottom-5 w-[25%]"
                 />
               </div>
               <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
                 <img
-                  src="/cardimages/web.png"
+                  src="/cardimages/web.webp"
                   className="absolute z-0 -right-10  -bottom-10 w-[40%]"
                 />
               </div>

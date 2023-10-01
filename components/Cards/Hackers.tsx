@@ -6,7 +6,7 @@ export const Hackers = () => {
       {/* </div> */}
 
       <img
-        src="/cardimages/bats.png"
+        src="/cardimages/bats.webp"
         className="w-[64%] -top-3 left-5 absolute"
       />
       {/* <img
@@ -18,7 +18,7 @@ export const Hackers = () => {
         className="absolute -left-[70px] -bottom-[20px] w-[98%]"
       /> */}
       <img
-        src="/cardimages/web.png"
+        src="/cardimages/web.webp"
         className="absolute -bottom-[30px] -right-[15px] w-full"
       />
 

@@ -6,19 +6,19 @@ export const DateCard = () => {
       {/* </div> */}
 
       <img
-        src="/cardimages/bats.png"
+        src="/cardimages/bats.webp"
         className="w-[64%] top-[10%] left-0 absolute"
       />
       <img
-        src="/cardimages/witch.png"
+        src="/cardimages/witch.webp"
         className="w-[29%] top-[18px] right-[18px] absolute"
       />
       <img
-        src="/cardimages/cat.png"
+        src="/cardimages/cat.webp"
         className="absolute left-2 bottom-0 w-[35%]"
       />
       <img
-        src="/cardimages/web.png"
+        src="/cardimages/web.webp"
         className="absolute -bottom-10 -right-[15px] w-3/4"
       />
 

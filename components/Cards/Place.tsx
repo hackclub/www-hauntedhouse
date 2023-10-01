@@ -14,11 +14,11 @@ export const PlaceCard = () => {
         className="w-[29%] top-[18px] right-[18px] absolute"
       /> */}
       <img
-        src="/cardimages/house.png"
+        src="/cardimages/house.webp"
         className="absolute -left-[70px] -bottom-[20px] w-[98%]"
       />
       <img
-        src="/cardimages/web.png"
+        src="/cardimages/web.webp"
         className="absolute -top-[70px] scale-[-1] rotate-90 -right-[15px] w-3/4"
       />
 
