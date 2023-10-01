@@ -70,7 +70,7 @@ export const WhatHackathon = () => {
         </h1>
         <div className="space-y-8">
           <Definition />
-          <RoomProvider id={roomId} initialPresence={{ cursor: null, dimensions: null }}>
+          <RoomProvider id={roomId} initialPresence={{ cursor: null, dimensions: null, location: null }}>
             <OuijaBoard />
           </RoomProvider>
         </div>
