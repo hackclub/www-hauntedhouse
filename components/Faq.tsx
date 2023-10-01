@@ -152,32 +152,34 @@ const AccordionItem = ({ header, ...rest }) => (
 
 export const Faq = () => {
   return (
-    <div className="p-8 md:p-12 w-full border-t border-accent-default border-dashed divide-x-0 divide-accent-default divide-dashed">
-      <h1 className="text-accent-default text-7xl text-center mb-6">FAQs</h1>
+    <div className="border-t  border-accent-default border-dashed">
+      <div className="p-8 md:p-12 w-full max-w-[95rem] mx-auto divide-x-0 divide-accent-default divide-dashed">
+        <h1 className="text-accent-default text-7xl text-center mb-6">FAQs</h1>
 
-      <div className="flex-col lg:flex-row flex space-y-4 lg:space-y-0 lg:space-x-4 w-full">
-        <Accordion
-          transition
-          transitionTimeout={250}
-          className="space-y-4 w-full"
-        >
-          {items.map(({ header, content }, i) => (
-            <AccordionItem header={header} key={i}>
-              {content}
-            </AccordionItem>
-          ))}
-        </Accordion>
-        <Accordion
-          transition
-          transitionTimeout={250}
-          className="space-y-4 w-full"
-        >
-          {items2.map(({ header, content }, i) => (
-            <AccordionItem header={header} key={i}>
-              {content}
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="flex-col lg:flex-row flex space-y-4 lg:space-y-0 lg:space-x-4 w-full">
+          <Accordion
+            transition
+            transitionTimeout={250}
+            className="space-y-4 w-full"
+          >
+            {items.map(({ header, content }, i) => (
+              <AccordionItem header={header} key={i}>
+                {content}
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Accordion
+            transition
+            transitionTimeout={250}
+            className="space-y-4 w-full"
+          >
+            {items2.map(({ header, content }, i) => (
+              <AccordionItem header={header} key={i}>
+                {content}
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </div>
   );

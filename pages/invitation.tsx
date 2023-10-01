@@ -37,7 +37,11 @@ export default function Invitation() {
             {({ isVisible }) => {
               isVisible ? setVisibleOnce(true) : "";
               return (
-                <FadeIn delay={100} visible={isVisible || visibleOnce} transitionDuration={1000}>
+                <FadeIn
+                  delay={100}
+                  visible={isVisible || visibleOnce}
+                  transitionDuration={1000}
+                >
                   <h4
                     id={`${isVisible || visibleOnce ? "L" : "notL"}`}
                     className="prior-flicker text-2xl md:text-3xl lg:text-4xl text-beige text-center mb-3"
@@ -88,7 +92,9 @@ export default function Invitation() {
           <Faq />
         </div>
         <Signup bgPlay={play} bgStop={stop} />
-        <Footer />
+        <div className="pb-12">
+          <Footer />
+        </div>
       </div>
     </>
   );
