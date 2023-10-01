@@ -30,7 +30,7 @@ export const Nav = () => {
         gap: "16px",
         position: "fixed",
         top: 0,
-        zIndex: 999,
+        zIndex: 599,
         width: "100%",
         display: "flex",
         opacity: 0,

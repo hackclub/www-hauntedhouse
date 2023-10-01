@@ -21,7 +21,7 @@ export default function Invitation() {
   return (
     <>
       <Nav />
-      <div className="pb-[15%]">
+      <div className="">
         <InvitationHero />
 
         <div className="mt-12 px-4">
