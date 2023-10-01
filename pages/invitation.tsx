@@ -23,25 +23,21 @@ export default function Invitation() {
 
   const [play, { stop }] = useSound("/haunted.mp3");
 
-  useEffect(() => {}, []);
   return (
     <>
       <Nav />
+      <audio loop autoPlay>
+        <source src="/haunted.mp3" type="audio/mp3" />
+      </audio>
       <div className="">
         <InvitationHero />
-
-        <button onClick={play}>hi</button>
 
         <div className="mt-12 px-4">
           <VisibilitySensor>
             {({ isVisible }) => {
               isVisible ? setVisibleOnce(true) : "";
               return (
-                <FadeIn
-                  delay={100}
-                  visible={isVisible || visibleOnce}
-                  transitionDuration={1000}
-                >
+                <FadeIn delay={100} visible={isVisible || visibleOnce} transitionDuration={1000}>
                   <h4
                     id={`${isVisible || visibleOnce ? "L" : "notL"}`}
                     className="prior-flicker text-2xl md:text-3xl lg:text-4xl text-beige text-center mb-3"
