@@ -3,7 +3,7 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 export const InvitationHero = () => {
   return (
     <div className="bg-[url('/alleyway-background-compressed.webp')] bg-left-top w-screen h-screen justify-center flex flex-col relative items-center">
-      <div className="px-6 w-[80%] max-w-5xl">
+      <div className="px-4 md:px-6 w-full md:w-[80%] max-w-5xl">
         <button className="card relative aspect-[1421/904] h-auto w-full  mx-auto">
           <img
             src="/quainthouse.webp"
