@@ -46,7 +46,10 @@ export const WhatHackathon = () => {
                 />
                 <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
                   Flamethrower at{" "}
-                  <a href="https://outernet.hackclub.com" className="underline">
+                  <a
+                    href="https://www.youtube.com/watch?v=O1s5HqSqKi0"
+                    className="underline"
+                  >
                     Outernet
                   </a>
                 </h1>
