@@ -2,6 +2,7 @@ export const Footer = () => {
   const signatures = [
     "https://cloud-cu81yjslv-hack-club-bot.vercel.app/0screenshot_2023-09-27_at_21.41.40-removebg.png",
     " https://cloud-l6pk2kttc-hack-club-bot.vercel.app/0image.png",
+    "https://cloud-hgfhu8yh1-hack-club-bot.vercel.app/0signature.png",
   ];
 
   return (
