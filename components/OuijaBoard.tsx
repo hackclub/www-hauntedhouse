@@ -1,7 +1,7 @@
 import { useMyPresence, useOthers } from "@/liveblocks.config";
+import { PointerEvent, useEffect, useRef, useState } from "react";
 import { ReactFlashlight } from "react-flashlight";
 import Cursor from "./Cursor";
-import { useCallback, useEffect, useRef, useState } from "react";
 
 const COLORS = [
   "#E57373",
@@ -19,43 +19,31 @@ export const OuijaBoard = () => {
   const [{ cursor }, updateMyPresence] = useMyPresence();
 
   const [dimensions, setDimensions] = useState(null);
-  const callBackRef = useRef(null);
+  const callBackRef = useRef<HTMLDivElement>(null);
 
-  const normalizeCursor = (x, y) => {
-    if (!dimensions) {
-      return { x, y };
-    }
+  const normalizeCursor = (x: number, y: number) => {
+    if (!dimensions) return { x, y };
 
-    const normalizedX = (x - dimensions.left) / dimensions.width;
-    const normalizedY = (y - dimensions.top) / dimensions.height;
+    const { left, top, width, height } = dimensions;
+    const normalizedX = (x - left) / width;
+    const normalizedY = (y - top) / height;
 
-    return {
-      x: normalizedX,
-      y: normalizedY,
-    };
+    return { x: normalizedX, y: normalizedY };
   };
 
-  const handlePointerMove = (event) => {
-    event.preventDefault();
+  const handlePointerMove = (e: PointerEvent<HTMLDivElement>) => {
+    e.preventDefault();
 
-    const { clientX, clientY } = event;
-
-    const normalizedCursor = normalizeCursor(clientX, clientY);
+    const normalizedCursor = normalizeCursor(e.clientX, e.clientY);
     setNormalizedCoords(normalizedCursor);
+
+    const width = callBackRef.current.getBoundingClientRect().width;
+    const height = callBackRef.current.getBoundingClientRect().height;
 
     // Update cursor position in MyPresence
     updateMyPresence({
-      cursor: {
-        x: normalizedCursor.x,
-        y: normalizedCursor.y,
-      },
-    });
-  };
-
-  const handlePointerLeave = () => {
-    // When the pointer goes out, set cursor to null
-    updateMyPresence({
-      cursor: null,
+      dimensions: { width, height },
+      cursor: { x: normalizedCursor.x * width, y: normalizedCursor.y * height },
     });
   };
 
@@ -63,15 +51,12 @@ export const OuijaBoard = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (callBackRef.current) {
-        setDimensions(callBackRef.current.getBoundingClientRect());
-      }
+      setDimensions(callBackRef.current.getBoundingClientRect());
     };
-
-    window.addEventListener("resize", handleResize);
 
     if (callBackRef.current) {
       setDimensions(callBackRef.current.getBoundingClientRect());
+      window.addEventListener("resize", handleResize);
     }
 
     return () => {
@@ -82,36 +67,35 @@ export const OuijaBoard = () => {
   return (
     <div
       onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
-      className="relative flex ouija flex-col xl:flex-row h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
+      onPointerLeave={() => updateMyPresence({ cursor: null })}
+      className="relative flex ouija flex-col h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
     >
-      <ReactFlashlight
-        className="z-0"
-        showCursor
-        initialPosition={{ x: 10, y: 10 }}
-      >
-        <div
-          ref={(node) => (callBackRef.current = node)}
-          className="border-10 rounded-lg border-accent-default"
-        >
-          <img src="/ouijaboard.jpeg" className="w-full" alt="Ouija Board" />
-        </div>
-      </ReactFlashlight>
+      <div ref={callBackRef} className="border-10 relative rounded-lg border-accent-default">
+        <ReactFlashlight className="z-0" showCursor initialPosition={{ x: 10, y: 10 }}>
+          <div>
+            <img src="/ouijaboard.jpeg" className="w-full h-full" alt="Ouija Board" />
+          </div>
+        </ReactFlashlight>
 
-      <div className="absolute w-full h-full overflow-x-hidden">
-        {others.map(({ connectionId, presence }) => {
-          if (presence.cursor === null) {
-            return null;
-          }
-          return (
-            <Cursor
-              key={`cursor-${connectionId}`}
-              color={COLORS[connectionId % COLORS.length]}
-              x={presence.cursor.x}
-              y={presence.cursor.y}
-            />
-          );
-        })}
+        <div className="absolute w-full h-full overflow-x-hidden top-0 left-0 mt-0 p-0">
+          {others.map(({ connectionId, presence }, i) => {
+            if (!presence.cursor) return null;
+
+            const currentWidth = dimensions.width;
+            const currentHeight = dimensions.height;
+
+            console.log(presence.cursor);
+
+            return (
+              <Cursor
+                key={`cursor-${connectionId}`}
+                color={COLORS[connectionId % COLORS.length]}
+                x={presence.cursor.x * (currentWidth / presence.dimensions.width)}
+                y={presence.cursor.y * (currentHeight / presence.dimensions.height)}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

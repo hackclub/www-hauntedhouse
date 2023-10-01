@@ -11,8 +11,8 @@ export const Footer = () => {
           We're gonna have a spooktastic experience—see you there,
         </h3>
         <div className="p-3 md:p-6 lg:p-8 border-beige border rounded-lg border-dashed">
-          {signatures.map((sig) => {
-            return <img src={sig} className="invert max-h-[80px]" />;
+          {signatures.map((sig, i) => {
+            return <img key={i} src={sig} className="invert max-h-[80px]" />;
           })}
         </div>
       </div>

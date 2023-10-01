@@ -5,13 +5,6 @@ import Image from "next/image";
 export default function Cursor({ color, x, y }) {
   return (
     <motion.div
-      style={
-        {
-          // position: "absolute",
-          // top: "0",
-          // left: "0",
-        }
-      }
       initial={{ x, y }}
       animate={{ x, y }}
       transition={{

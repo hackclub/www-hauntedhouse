@@ -9,7 +9,7 @@ import { useMemo } from "react";
 import Cursor from "./Cursor";
 import { OuijaBoard } from "./OuijaBoard";
 
-function useOverrideRoomId(roomId: string) {
+export function useOverrideRoomId(roomId: string) {
   const { query } = useRouter();
   const overrideRoomId = useMemo(() => {
     return query?.roomId ? `${roomId}-${query.roomId}` : roomId;
@@ -52,10 +52,7 @@ export const WhatHackathon = () => {
               </h1>
             </div>
             <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
-              <img
-                src="/cardimages/witch.png"
-                className="absolute z-0 -left-5 -bottom-5 w-[25%]"
-              />
+              <img src="/cardimages/witch.png" className="absolute z-0 -left-5 -bottom-5 w-[25%]" />
             </div>
             <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
               <img
@@ -73,12 +70,7 @@ export const WhatHackathon = () => {
         </h1>
         <div className="space-y-8">
           <Definition />
-          <RoomProvider
-            id={roomId}
-            initialPresence={{
-              cursor: null,
-            }}
-          >
+          <RoomProvider id={roomId} initialPresence={{ cursor: null, dimensions: null }}>
             <OuijaBoard />
           </RoomProvider>
         </div>
