@@ -75,7 +75,11 @@ export const WhatHackathon = () => {
             <Definition />
             <RoomProvider
               id={roomId}
-              initialPresence={{ cursor: null, dimensions: null }}
+              initialPresence={{
+                cursor: null,
+                dimensions: null,
+                location: null,
+              }}
             >
               <OuijaBoard />
             </RoomProvider>
