@@ -27,6 +27,7 @@ export const Nav = () => {
       id="nav"
       style={{
         alignItems: "center",
+        justifyContent: "space-between",
         gap: "16px",
         position: "fixed",
         top: 0,
@@ -35,11 +36,11 @@ export const Nav = () => {
         display: "flex",
         opacity: 0,
       }}
-      className="px-4 py-2 text-beige  bg-black shadow-none shadow-accent-default"
+      className="px-4 py-2 text-beige bg-black shadow-none shadow-accent-default bg-opacity-60 border-b border-white/10 backdrop-blur-md backdrop-saturate-200"
       animate={controls}
     >
       <div className="w-full flex items-center justify-between">
-        <p className="text-3xl tracking-wide"></p>
+        <p className="text-3xl tracking-wide text-accent-default">Haunted House</p>
 
         <a
           href="#signup"
