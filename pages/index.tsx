@@ -108,7 +108,7 @@ export default function Home() {
       {showImage && (
         <motion.div
         initial={{ opacity: 0.2 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 0.8 }}
         transition={{ duration: 0.8 }}
         >
       <img src={"/entercard.webp"}
