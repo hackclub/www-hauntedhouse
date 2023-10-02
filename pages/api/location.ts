@@ -6,7 +6,8 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    let result = await fetch("http://ip-api.com/json");
+    const { ip } = req.query;
+    let result = await fetch(`http://ip-api.com/json/${ip}`);
     result = await result.json();
 
     res.status(200).send(result);

@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Cursor({ color, x, y, location }) {
   return (
     <motion.div
-      className="flex items-center flex-col"
+      className="flex items-center flex-col w-fit h-fit"
       initial={{ x, y }}
       animate={{ x, y }}
       transition={{
