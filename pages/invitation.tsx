@@ -29,7 +29,7 @@ export default function Invitation() {
       <audio loop autoPlay>
         <source src="/haunted.mp3" type="audio/mp3" />
       </audio>
-      <div className="">
+      <div className="relative">
         <InvitationHero />
 
         <div className="mt-12 px-4">
@@ -94,6 +94,16 @@ export default function Invitation() {
         <Signup bgPlay={play} bgStop={stop} />
         <div className="pb-12">
           <Footer />
+        </div>
+
+        <div
+          style={{ zIndex: 999 }}
+          className="text-center text-2xl text-black w-full px-2 bottom-0 left-0 absolute bg-accent-default py-1 mt-10"
+        >
+          {/* 👻 Hack the Night Away! Join our Halloween Hackathon for a
+          Spooktacular Code Adventure! 🎃 */}
+          {/* Where fright meets byte. */}
+          Where Fright Meets Byte: A Haunted House Hackathon Experience.
         </div>
       </div>
     </>
