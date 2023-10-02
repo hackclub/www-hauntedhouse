@@ -103,8 +103,7 @@ export const OuijaBoard = () => {
 
         <div className="absolute w-full h-full overflow-x-hidden top-0 left-0 mt-0 p-0">
           {others.map(({ connectionId, presence }, i) => {
-            if (!presence.cursor) return null;
-            if (!dimensions) return null;
+            if (!presence.cursor || !dimensions) return null;
 
             const currentWidth = dimensions.width;
             const currentHeight = dimensions.height;
