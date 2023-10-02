@@ -84,11 +84,11 @@ export const OuijaBoard = () => {
 
   return (
     <div
-      onPointerEnter={() => setDimensions(callBackRef.current.getBoundingClientRect())}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={() => updateMyPresence({ cursor: null })}
-      className="flex ouija flex-col h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
-    >
+    onPointerEnter={() => setDimensions(callBackRef.current.getBoundingClientRect())}
+    onPointerMove={handlePointerMove}
+    onPointerLeave={() => updateMyPresence({ cursor: null })}
+    className="flex ouija flex-col h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
+  >
       <div ref={callBackRef} className="border-8 p-2 relative w-full rounded-xl border-[#6a4c31]">
         <ReactFlashlight
           className="z-0"
@@ -102,25 +102,25 @@ export const OuijaBoard = () => {
         </ReactFlashlight>
 
         <div className="absolute w-full h-full overflow-x-hidden top-0 left-0 mt-0 p-0">
-          {others.map(({ connectionId, presence }, i) => {
-            if (!presence.cursor) return null;
+        {others.map(({ connectionId, presence }, i) => {
+          if (!presence.cursor || !dimensions) return null;
 
-            const currentWidth = dimensions.width;
-            const currentHeight = dimensions.height;
+          const currentWidth = dimensions.width;
+          const currentHeight = dimensions.height;
 
-            console.log(presence.cursor);
+          console.log(presence.cursor);
 
-            return (
-              <Cursor
-                location={presence.location}
-                key={`cursor-${connectionId}`}
-                color={COLORS[connectionId % COLORS.length]}
-                x={presence.cursor.x * (currentWidth / presence.dimensions.width)}
-                y={presence.cursor.y * (currentHeight / presence.dimensions.height)}
-              />
-            );
-          })}
-        </div>
+          return (
+            <Cursor
+              location={presence.location}
+              key={`cursor-${connectionId}`}
+              color={COLORS[connectionId % COLORS.length]}
+              x={presence.cursor.x * (currentWidth / presence.dimensions.width)}
+              y={presence.cursor.y * (currentHeight / presence.dimensions.height)}
+            />
+          );
+        })}
+      </div>
       </div>
     </div>
   );
