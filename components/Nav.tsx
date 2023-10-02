@@ -40,8 +40,8 @@ export const Nav = () => {
       animate={controls}
     >
       <div className="w-full flex items-center justify-between">
-        <p className="text-3xl tracking-wide text-accent-default">The Hack Club Haunted House</p>
-
+        <p className="text-3xl tracking-wide text-accent-default sm:block hidden">The Hack Club Haunted House</p>
+        <p className="text-3xl tracking-wide text-accent-default sm:hidden block">Haunted House</p>
         <a
           href="#signup"
           className="px-10 py-2 text-[1.3rem] tracking-wide rounded-md bg-accent-default hover:bg-accent-darker transition duration-100 ease-in-out  text-beige"
