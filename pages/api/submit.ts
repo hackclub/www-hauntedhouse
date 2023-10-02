@@ -54,7 +54,7 @@ export default function handler(
 
     res.status(200).send({ message: "Created successfully" });
   } catch (err) {
-    res.status(200).send({
+    res.status(500).send({
       message:
         "Whoops! There seems to have been an error on our end. Contact hauntedhouse@hackclub.com to report/for any other concerns.",
       error: true,

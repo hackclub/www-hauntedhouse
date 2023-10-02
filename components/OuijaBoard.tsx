@@ -52,7 +52,7 @@ export const OuijaBoard = () => {
   useEffect(() => {
     if (location) return;
 
-    fetch("http://ip-api.com/json", {
+    fetch("/api/location", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
