@@ -39,6 +39,7 @@ export const Footer = () => {
           })}
         </div>
       </div>
+      <div className="text-center text-xl text-white mt-10">👻 Hack the Night Away! Join our Halloween Hackathon for a Spooktacular Code Adventure! 🎃</div>
     </div>
   );
 };
