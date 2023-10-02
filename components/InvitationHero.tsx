@@ -27,7 +27,7 @@ export const InvitationHero = () => {
             className={`card-side front shadow-2xl shadow-red-500  border-[0.8rem]   transition border-white`}
           />
           <img
-            src="/changedpostcard.webp"
+            src="/changedpostcardfont.webp"
             className={`card-side back shadow-2xl shadow-red-500  border-[0.8rem]   transition border-white`}
           />
         </button>
