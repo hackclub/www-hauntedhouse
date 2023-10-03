@@ -6,5 +6,5 @@ Join us on Hallow's Eve, from October 28-29th in the heart of Chicago, for a wee
 
 The premise of Haunted House is simple: we’re going to be making a virtual haunted house. We’ll provide a site that links to another site, which links to another site. The goal? Make the scariest haunted house experience possible, all through the power of the web. Jumpscares and spooky scary skeletons galore–let’s make this event truly bone-chilling.
 
-It’s going to be a lot of fun with all the friends you’ll make and all the projects you’ll build. Get started by heading over to haunted.hackclub.com to get started, and we hope to see you there!
+It’s going to be a lot of fun with all the friends you’ll make and all the projects you’ll build. Get started by heading over to [haunted.hackclub.com](https://haunted.hackclub.com) to get started, and we hope to see you there!
 

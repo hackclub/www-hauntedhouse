@@ -52,12 +52,18 @@ export const OuijaBoard = () => {
   useEffect(() => {
     if (location) return;
 
-    fetch("/api/location", {
+    fetch("https://ifconfig.me/ip", {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
     })
-      .then((res) => res.json())
-      .then((data) => setLocation(data));
+      .then((res) => res.text())
+      .then((data) => {
+        fetch(`/api/location?ip=${data}`, {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => res.json())
+          .then((data) => setLocation(data));
+      });
   }, []);
 
   const others = useOthers();
@@ -68,7 +74,6 @@ export const OuijaBoard = () => {
     };
 
     if (callBackRef.current) {
-      setDimensions(callBackRef.current.getBoundingClientRect());
       window.addEventListener("resize", handleResize);
     }
 
@@ -79,14 +84,12 @@ export const OuijaBoard = () => {
 
   return (
     <div
+      onPointerEnter={() => setDimensions(callBackRef.current.getBoundingClientRect())}
       onPointerMove={handlePointerMove}
       onPointerLeave={() => updateMyPresence({ cursor: null })}
-      className="relative flex ouija flex-col h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
+      className="flex ouija flex-col h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
     >
-      <div
-        ref={callBackRef}
-        className="border-8 p-2 relative rounded-xl border-[#6a4c31]"
-      >
+      <div ref={callBackRef} className="border-8 p-2 relative w-full rounded-xl border-[#6a4c31]">
         <ReactFlashlight
           className="z-0"
           showCursor
@@ -94,33 +97,26 @@ export const OuijaBoard = () => {
           initialPosition={{ x: 10, y: 10 }}
         >
           <div>
-            <img
-              src="/ouijaboard.jpeg"
-              className="w-full h-full rounded-xl"
-              alt="Ouija Board"
-            />
+            <img src="/ouijaboard.jpeg" className="w-full rounded-xl" alt="Ouija Board" />
           </div>
         </ReactFlashlight>
 
         <div className="absolute w-full h-full overflow-x-hidden top-0 left-0 mt-0 p-0">
           {others.map(({ connectionId, presence }, i) => {
-            if (!presence.cursor) return null;
+            if (!presence.cursor || !dimensions) return null;
 
             const currentWidth = dimensions.width;
             const currentHeight = dimensions.height;
+
+            console.log(presence.cursor);
 
             return (
               <Cursor
                 location={presence.location}
                 key={`cursor-${connectionId}`}
                 color={COLORS[connectionId % COLORS.length]}
-                x={
-                  presence.cursor.x * (currentWidth / presence.dimensions.width)
-                }
-                y={
-                  presence.cursor.y *
-                  (currentHeight / presence.dimensions.height)
-                }
+                x={presence.cursor.x * (currentWidth / presence.dimensions.width)}
+                y={presence.cursor.y * (currentHeight / presence.dimensions.height)}
               />
             );
           })}

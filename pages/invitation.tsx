@@ -8,11 +8,12 @@ import { Signup } from "@/components/Signup";
 import { WhatHackathon } from "@/components/WhatHackathon";
 import { WhatIsThis } from "@/components/WhatIsThis";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import AnimatedCursor from "react-animated-cursor";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import VisibilitySensor from "react-visibility-sensor";
 import useSound from "use-sound";
+import { FiVolume2, FiVolumeX } from "react-icons/fi";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
@@ -20,17 +21,42 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 
 export default function Invitation() {
   const [visibleOnce, setVisibleOnce] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
 
-  const [play, { stop }] = useSound("/haunted.mp3");
+  const [play, { stop }] = useSound("/haunted.mp3", {
+    volume: isMuted ? 0 : 1,
+  });
+
+  const audioRef = useRef(null);
+
+  const toggleMute = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = !audioRef.current.muted;
+      setIsMuted(audioRef.current.muted);
+    }
+  };
+  
+
 
   return (
     <>
       <Nav />
-      <audio loop autoPlay>
-        <source src="/haunted.mp3" type="audio/mp3" />
-      </audio>
+      <audio ref={audioRef} loop autoPlay>
+      <source src="/haunted.mp3" type="audio/mp3" />
+    </audio>
       <div className="relative">
         <InvitationHero />
+
+        <div className="flex items-center w-[95%] justify-between ">
+          <div></div>
+          <div className="bg-black border-white border backdrop-saturate-200 rounded-full py-3 px-3 cursor-pointer" onClick={toggleMute}>
+          {isMuted ? (
+            <FiVolumeX color="EB6424" size={24} />
+          ) : (
+            <FiVolume2 color="EB6424" size={24} />
+          )}
+          </div>
+        </div>
 
         <div className="mt-12 px-4">
           <VisibilitySensor>

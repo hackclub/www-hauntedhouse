@@ -32,7 +32,7 @@ export const Footer = () => {
         <div className="p-3 md:p-6 flex flex-wrap gap-4 justify-center lg:p-8 border-beige border rounded-lg border-dashed">
           {signatures.map((sig, i) => {
             return (
-              <a href={sig.link} target="_blank">
+              <a key={i} href={sig.link} target="_blank">
                 <img key={i} src={sig.sig} className="invert max-h-[80px]" />
               </a>
             );
