@@ -23,10 +23,15 @@ export const WhatHackathon = () => {
 
   return (
     <div className="border-t  border-accent-default border-dashed">
-      <div className="flex flex-col max-w-[90rem] mx-auto lg:flex-row  divide-x-0 divide-accent-default divide-dashed">
-        <div className="p-8 md:p-12  lg:w-[40%]">
+      <div className="flex flex-col max-w-[90rem] mx-auto divide-x-0 divide-accent-default divide-dashed">
+        <div className="p-8 md:p-12">
+          <h1 className="text-5xl mb-20 lg:text-7xl text-center text-accent-darker">
+            {/* What is a hackathon? */}
+            Why Haunted House?
+          </h1>
           {/* <img src="/cardimages/tape.png" /> */}
-          <div className="relative flex flex-wrap pt-10 py-2 px-2  h-full justify-center items-center">
+          {/* <div className="relative h-full  xl:grid-cols-3 lg:grid-cols-4 grid flex-wrap gap-10 pt-10 px-8 mx-auto max-w-8xl scale-[80%] justify-center"> */}
+          <div className="w-full px-8 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:flex flex-wrap lg:flex-nowrap gap-16  lg:gap-8 max-w-6xl mx-auto">
             {/* <img
               src="/stacked1.png"
               className="absolute opacity-0 sm:opacity-100  scale-105 aspect-[83/100] mx-auto my-auto"
@@ -35,23 +40,17 @@ export const WhatHackathon = () => {
               src="/stacked2.png"
               className="absolute opacity-0 sm:opacity-100 scale-105 aspect-[83/100] mx-auto my-auto"
             /> */}
-            <div className=" bg-accent-default pb-4 relative aspect-square w-full border border-accent-darker shadow-2xl max-w-lg mx-auto my-auto p-[30px]">
+            <div className="bg-accent-default w-full max-w-[20rem] h-full  relative aspect-square border border-accent-darker shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
-                className="w-[26%] max-w-[7rem] -top-[15%] left-[45%] absolute z-50"
+                className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
                 <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
-                  Flamethrower at{" "}
-                  <a
-                    href="https://www.youtube.com/watch?v=O1s5HqSqKi0"
-                    className="underline"
-                  >
-                    Outernet
-                  </a>
+                  1. Come up with an idea
                 </h1>
               </div>
-              <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
+              {/* <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
                 <img
                   src="/cardimages/witch.webp"
                   className="absolute z-0 -left-5 -bottom-5 w-[25%]"
@@ -62,26 +61,20 @@ export const WhatHackathon = () => {
                   src="/cardimages/web.webp"
                   className="absolute z-0 -right-10  -bottom-10 w-[40%]"
                 />
-              </div>
+              </div> */}
             </div>
 
-            <div className=" bg-accent-default pb-4 relative aspect-square w-full border border-accent-darker shadow-2xl max-w-lg mx-auto my-auto p-[30px]">
+            <div className="bg-accent-default w-full max-w-[20rem] h-full relative aspect-square border border-accent-darker shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
-                className="w-[26%] max-w-[7rem] -top-[15%] left-[45%] absolute z-50"
+                className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
-                  Flamethrower at{" "}
-                  <a
-                    href="https://www.youtube.com/watch?v=O1s5HqSqKi0"
-                    className="underline"
-                  >
-                    Outernet
-                  </a>
+                <h1 className="pb-4 marker  text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
+                  2. Form a team
                 </h1>
               </div>
-              <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
+              {/* <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
                 <img
                   src="/cardimages/witch.webp"
                   className="absolute z-0 -left-5 -bottom-5 w-[25%]"
@@ -92,26 +85,20 @@ export const WhatHackathon = () => {
                   src="/cardimages/web.webp"
                   className="absolute z-0 -right-10  -bottom-10 w-[40%]"
                 />
-              </div>
+              </div> */}
             </div>
 
-            <div className=" bg-accent-default pb-4 relative aspect-square w-full border border-accent-darker shadow-2xl max-w-lg mx-auto my-auto p-[30px]">
+            <div className="bg-accent-default w-full max-w-[20rem] h-full relative aspect-square border border-accent-darker shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
-                className="w-[26%] max-w-[7rem] -top-[15%] left-[45%] absolute z-50"
+                className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
                 <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
-                  Flamethrower at{" "}
-                  <a
-                    href="https://www.youtube.com/watch?v=O1s5HqSqKi0"
-                    className="underline"
-                  >
-                    Outernet
-                  </a>
+                  3. Build and learn
                 </h1>
               </div>
-              <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
+              {/* <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
                 <img
                   src="/cardimages/witch.webp"
                   className="absolute z-0 -left-5 -bottom-5 w-[25%]"
@@ -122,26 +109,20 @@ export const WhatHackathon = () => {
                   src="/cardimages/web.webp"
                   className="absolute z-0 -right-10  -bottom-10 w-[40%]"
                 />
-              </div>
+              </div> */}
             </div>
 
-            <div className=" bg-accent-default pb-4 relative aspect-square w-full border border-accent-darker shadow-2xl max-w-lg mx-auto my-auto p-[30px]">
+            <div className="bg-accent-default w-full max-w-[20rem] h-full relative aspect-square border border-accent-darker shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
-                className="w-[26%] max-w-[7rem] -top-[15%] left-[45%] absolute z-50"
+                className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
                 <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
-                  Flamethrower at{" "}
-                  <a
-                    href="https://www.youtube.com/watch?v=O1s5HqSqKi0"
-                    className="underline"
-                  >
-                    Outernet
-                  </a>
+                  4. Show off what you made
                 </h1>
               </div>
-              <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
+              {/* <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
                 <img
                   src="/cardimages/witch.webp"
                   className="absolute z-0 -left-5 -bottom-5 w-[25%]"
@@ -152,16 +133,12 @@ export const WhatHackathon = () => {
                   src="/cardimages/web.webp"
                   className="absolute z-0 -right-10  -bottom-10 w-[40%]"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
-        <div className="p-8 md:p-12 w-full lg:w-[60%]">
-          <h1 className="text-6xl text-accent-darker mb-6">
-            {/* What is a hackathon? */}
-            Why Haunted House?
-          </h1>
-          <div className="space-y-8">
+        <div className="p-8 md:p-12 w-full">
+          <div className="space-y-8 max-w-3xl mx-auto">
             {/* <Definition /> */}
             <RoomProvider
               id={roomId}

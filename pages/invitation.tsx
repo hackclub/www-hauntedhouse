@@ -35,28 +35,28 @@ export default function Invitation() {
       setIsMuted(audioRef.current.muted);
     }
   };
-  
-
 
   return (
     <>
+      <div
+        style={{
+          zIndex: 999,
+        }}
+        className="fixed bottom-3 right-3"
+      >
+        <div
+          className=" border-gray-500 hover:border-beige  hover:text-beige duration-150 text-accent-default hover:bg-accent-default border rounded-full py-3 px-3 cursor-pointer"
+          onClick={toggleMute}
+        >
+          {isMuted ? <FiVolumeX size={24} /> : <FiVolume2 size={24} />}
+        </div>
+      </div>
       <Nav />
       <audio ref={audioRef} loop autoPlay>
-      <source src="/haunted.mp3" type="audio/mp3" />
-    </audio>
+        <source src="/haunted.mp3" type="audio/mp3" />
+      </audio>
       <div className="relative">
         <InvitationHero />
-
-        <div className="flex items-center w-[95%] justify-between ">
-          <div></div>
-          <div className="bg-black border-white border backdrop-saturate-200 rounded-full py-3 px-3 cursor-pointer" onClick={toggleMute}>
-          {isMuted ? (
-            <FiVolumeX color="EB6424" size={24} />
-          ) : (
-            <FiVolume2 color="EB6424" size={24} />
-          )}
-          </div>
-        </div>
 
         <div className="mt-12 px-4">
           <VisibilitySensor>
