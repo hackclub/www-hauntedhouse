@@ -46,7 +46,7 @@ export const WhatHackathon = () => {
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
+                <h1 className="pb-4 notes text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
                   1. Come up with an idea
                 </h1>
               </div>
@@ -70,7 +70,7 @@ export const WhatHackathon = () => {
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker  text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
+                <h1 className="pb-4 notes text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
                   2. Form a team
                 </h1>
               </div>
@@ -94,7 +94,7 @@ export const WhatHackathon = () => {
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
+                <h1 className="pb-4 notes text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
                   3. Build and learn
                 </h1>
               </div>
@@ -118,7 +118,7 @@ export const WhatHackathon = () => {
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
+                <h1 className="pb-4 notes text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
                   4. Show off what you made
                 </h1>
               </div>
