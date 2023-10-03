@@ -8,7 +8,7 @@ import { Signup } from "@/components/Signup";
 import { WhatHackathon } from "@/components/WhatHackathon";
 import { WhatIsThis } from "@/components/WhatIsThis";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import AnimatedCursor from "react-animated-cursor";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import VisibilitySensor from "react-visibility-sensor";
@@ -23,25 +23,27 @@ export default function Invitation() {
   const [visibleOnce, setVisibleOnce] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
-  const [play, { stop }] = useSound("/haunted.mp3", { volume: isMuted ? 0 : 1 });
+  const [play, { stop }] = useSound("/haunted.mp3", {
+    volume: isMuted ? 0 : 1,
+  });
+
+  const audioRef = useRef(null);
 
   const toggleMute = () => {
-    setIsMuted((prevIsMuted) => {
-      if (prevIsMuted) {
-        stop();
-      } else {
-        stop();
-      }
-      return !prevIsMuted;
-    });
+    if (audioRef.current) {
+      audioRef.current.muted = !audioRef.current.muted;
+      setIsMuted(audioRef.current.muted);
+    }
   };
+  
+
 
   return (
     <>
       <Nav />
-      <audio loop autoPlay>
-        <source src="/haunted.mp3" type="audio/mp3" />
-      </audio>
+      <audio ref={audioRef} loop autoPlay>
+      <source src="/haunted.mp3" type="audio/mp3" />
+    </audio>
       <div className="relative">
         <InvitationHero />
 
