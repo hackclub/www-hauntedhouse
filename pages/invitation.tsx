@@ -45,13 +45,13 @@ export default function Invitation() {
       <div className="relative">
         <InvitationHero />
 
-        <div className="cursor-pointer flex items-center w-[95%] justify-between " onClick={toggleMute}>
+        <div className="flex items-center w-[95%] justify-between ">
           <div></div>
-          <div className="bg-black border-white border backdrop-saturate-200 rounded-full py-3 px-3">
+          <div className="bg-black border-white border backdrop-saturate-200 rounded-full py-3 px-3 cursor-pointer" onClick={toggleMute}>
           {isMuted ? (
-            <FiVolumeX color="orange" size={24} />
+            <FiVolumeX color="EB6424" size={24} />
           ) : (
-            <FiVolume2 color="orange" size={24} />
+            <FiVolume2 color="EB6424" size={24} />
           )}
           </div>
         </div>
