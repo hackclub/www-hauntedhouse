@@ -40,13 +40,13 @@ export const WhatHackathon = () => {
               src="/stacked2.png"
               className="absolute opacity-0 sm:opacity-100 scale-105 aspect-[83/100] mx-auto my-auto"
             /> */}
-            <div className="bg-accent-default w-full max-w-[20rem] h-full  relative aspect-square border border-accent-darker shadow-2xl mx-auto my-auto p-[30px]">
+             <div className="bg-[#eee7d7] w-full max-w-[20rem] h-full relative aspect-square border  border-[#eeeedd] shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
+                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
                   1. Come up with an idea
                 </h1>
               </div>
@@ -64,13 +64,13 @@ export const WhatHackathon = () => {
               </div> */}
             </div>
 
-            <div className="bg-accent-default w-full max-w-[20rem] h-full relative aspect-square border border-accent-darker shadow-2xl mx-auto my-auto p-[30px]">
+            <div className="bg-[#eee7d7] w-full max-w-[20rem] h-full relative aspect-square border  border-[#eeeedd] shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker  text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
+                <h1 className="pb-4 marker  text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
                   2. Form a team
                 </h1>
               </div>
@@ -88,13 +88,13 @@ export const WhatHackathon = () => {
               </div> */}
             </div>
 
-            <div className="bg-accent-default w-full max-w-[20rem] h-full relative aspect-square border border-accent-darker shadow-2xl mx-auto my-auto p-[30px]">
+            <div className="bg-[#eee7d7] w-full max-w-[20rem] h-full relative aspect-square border  border-[#eeeedd] shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
+                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
                   3. Build and learn
                 </h1>
               </div>
@@ -112,13 +112,13 @@ export const WhatHackathon = () => {
               </div> */}
             </div>
 
-            <div className="bg-accent-default w-full max-w-[20rem] h-full relative aspect-square border border-accent-darker shadow-2xl mx-auto my-auto p-[30px]">
+            <div className="bg-[#eee7d7] w-full max-w-[20rem] h-full relative aspect-square border  border-[#eeeedd] shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
               />
               <div className="overflow-hidden relative">
-                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-beige">
+                <h1 className="pb-4 marker text-2xl lg:text-2xl xl:text-3xl mt-5 relative z-50 font-black text-black">
                   4. Show off what you made
                 </h1>
               </div>
