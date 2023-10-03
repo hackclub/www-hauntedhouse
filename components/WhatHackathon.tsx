@@ -40,7 +40,7 @@ export const WhatHackathon = () => {
               src="/stacked2.png"
               className="absolute opacity-0 sm:opacity-100 scale-105 aspect-[83/100] mx-auto my-auto"
             /> */}
-             <div className="bg-[#eee7d7] w-full max-w-[20rem] h-full relative aspect-square border  border-[#eeeedd] shadow-2xl mx-auto my-auto p-[30px]">
+             <div className="bg-[#E8E0CC] bg-[url('/mapbg.png')] w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
@@ -64,7 +64,7 @@ export const WhatHackathon = () => {
               </div> */}
             </div>
 
-            <div className="bg-[#eee7d7] w-full max-w-[20rem] h-full relative aspect-square border  border-[#eeeedd] shadow-2xl mx-auto my-auto p-[30px]">
+            <div className="bg-[#E8E0CC]  bg-[url('/mapbg.png')] w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
@@ -88,7 +88,7 @@ export const WhatHackathon = () => {
               </div> */}
             </div>
 
-            <div className="bg-[#eee7d7] w-full max-w-[20rem] h-full relative aspect-square border  border-[#eeeedd] shadow-2xl mx-auto my-auto p-[30px]">
+            <div className="bg-[#E8E0CC] bg-[url('/mapbg.png')] w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
@@ -112,7 +112,7 @@ export const WhatHackathon = () => {
               </div> */}
             </div>
 
-            <div className="bg-[#eee7d7] w-full max-w-[20rem] h-full relative aspect-square border  border-[#eeeedd] shadow-2xl mx-auto my-auto p-[30px]">
+            <div className="bg-[#E8E0CC]  bg-[url('/mapbg.png')] w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px]">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
