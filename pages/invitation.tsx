@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import VisibilitySensor from "react-visibility-sensor";
 import useSound from "use-sound";
+import { FiVolume2, FiVolumeX } from "react-icons/fi";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
@@ -20,8 +21,20 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 
 export default function Invitation() {
   const [visibleOnce, setVisibleOnce] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
 
-  const [play, { stop }] = useSound("/haunted.mp3");
+  const [play, { stop }] = useSound("/haunted.mp3", { volume: isMuted ? 0 : 1 });
+
+  const toggleMute = () => {
+    setIsMuted((prevIsMuted) => {
+      if (prevIsMuted) {
+        stop();
+      } else {
+        stop();
+      }
+      return !prevIsMuted;
+    });
+  };
 
   return (
     <>
@@ -31,6 +44,17 @@ export default function Invitation() {
       </audio>
       <div className="relative">
         <InvitationHero />
+
+        <div className="cursor-pointer flex items-center w-[95%] justify-between " onClick={toggleMute}>
+          <div></div>
+          <div className="bg-black border-white border backdrop-saturate-200 rounded-full py-3 px-3">
+          {isMuted ? (
+            <FiVolumeX color="orange" size={24} />
+          ) : (
+            <FiVolume2 color="orange" size={24} />
+          )}
+          </div>
+        </div>
 
         <div className="mt-12 px-4">
           <VisibilitySensor>
