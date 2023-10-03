@@ -31,7 +31,7 @@ export const WhatHackathon = () => {
           </h1>
           {/* <img src="/cardimages/tape.png" /> */}
           {/* <div className="relative h-full  xl:grid-cols-3 lg:grid-cols-4 grid flex-wrap gap-10 pt-10 px-8 mx-auto max-w-8xl scale-[80%] justify-center"> */}
-          <div className="w-full px-8 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:flex flex-wrap lg:flex-nowrap gap-16  lg:gap-8 max-w-6xl mx-auto">
+          <div className="w-full px-8 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:flex flex-wrap lg:flex-nowrap gap-16  lg:gap-8 max-w-6xl mx-auto bg-[url('/corkboard.webp')] py-10 border-[15px] border-[#E8E0CC]">
             {/* <img
               src="/stacked1.png"
               className="absolute opacity-0 sm:opacity-100  scale-105 aspect-[83/100] mx-auto my-auto"
@@ -40,7 +40,7 @@ export const WhatHackathon = () => {
               src="/stacked2.png"
               className="absolute opacity-0 sm:opacity-100 scale-105 aspect-[83/100] mx-auto my-auto"
             /> */}
-             <div className="bg-[#E8E0CC] bg-[url('/mapbg.png')] w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px]">
+             <div className="bg-[#E8E0CC] bg-[url('/mapbg.png')] w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px] ml-10">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
@@ -112,7 +112,7 @@ export const WhatHackathon = () => {
               </div> */}
             </div>
 
-            <div className="bg-[#E8E0CC]  bg-[url('/mapbg.png')] w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px]">
+            <div className="bg-[#E8E0CC]  bg-[url('/mapbg.png')] w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px] mr-10">
               <img
                 src="/cardimages/tape.webp"
                 className="w-[26%] max-w-[7rem] -top-[20%] left-[45%] absolute z-50"
