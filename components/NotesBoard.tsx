@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 const items = [
-  { id: 1, content: "1. Come up with an idea" },
-  { id: 2, content: "2. Form a team" },
-  { id: 3, content: "3. Build and learn" },
-  { id: 4, content: "4. Show off what you made" },
+  { id: 1, content: "1. Show up with friends in a halloween costume"},
+  { id: 2, content: "2. Design and build a website that will act as a room for the haunted house." },
+  { id: 3, content: "3. Submit the website so we can link it with the rest of the house." },
+  { id: 4, content: "4. Explore the haunted house as it starts to build up." },
 ];
 
 const NotesBoard = () => {
@@ -52,7 +52,7 @@ const Row = ({ items }) => {
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}
-          className="w-full px-8 grid grid-cols-1 md:grid-cols-2 lg:flex flex-wrap lg:flex-nowrap gap-16  lg:gap-8 max-w-6xl mx-auto bg-[url('/corkboard.webp')] bg-cover py-10 border-[15px] border-[#E8E0CC]"
+          className="w-full px-8 grid grid-cols-1 md:grid-cols-2 lg:flex flex-wrap lg:flex-nowrap gap-16  lg:gap-8 max-w-6xl mx-auto bg-[url('/corkboard.webp')] bg-cover py-10 border-[10px] border-accent-default rounded-[5px] filter-black"
           {...provided.droppableProps}
         >
           {items.map((item, index) => (
