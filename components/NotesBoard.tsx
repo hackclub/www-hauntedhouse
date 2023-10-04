@@ -71,7 +71,7 @@ const Row = ({ items }) => {
                   /> */}
                   <img
                     src="/pin.png"
-                    className="w-[26%] max-w-[7rem] absolute z-50"
+                    className="w-[18%] max-w-[7rem] absolute z-50"
                     style={{
                       transform: snapshot.isDragging ? "rotate(50deg)" : "rotate(0deg)",
                       top: "8px",
