@@ -378,3 +378,7 @@ body {
 .notes {
   font-family: 'Stickynotes', sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
