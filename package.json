@@ -25,6 +25,7 @@
     "react-animate-on-scroll": "^2.1.7",
     "react-animated-cursor": "^2.9.3",
     "react-animation-on-scroll": "^5.1.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "18.2.0",
     "react-fade-in": "^2.0.1",
     "react-flashlight": "^1.0.6",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@types/react-animate-on-scroll": "^2.1.5",
+    "@types/react-beautiful-dnd": "^13.1.5",
     "tailwindcss-3d": "^1.0.1"
   }
 }
