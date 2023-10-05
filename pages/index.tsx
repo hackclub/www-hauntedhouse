@@ -23,35 +23,31 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-     // router.push("/invitation");
+      // router.push("/invitation");
     }, 5500);
   }, []);
-
 
   const [showImage, setShowImage] = useState(false);
   const videoRef = useRef(null);
 
   useEffect(() => {
-  
     const timer = setTimeout(() => {
       setShowImage(true);
-      videoRef.current.pause(); 
-    }, 4000);
+      videoRef.current.pause();
+    }, 1900);
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleImageClick = () => {
-    setShowImage(false); 
-    videoRef.current.play(); 
+    setShowImage(false);
+    // videoRef.current.play();
+    handleVideoEnd();
   };
 
   const handleVideoEnd = () => {
-    router.push('/invitation');
+    router.push("/invitation");
   };
-
-
-
 
   return (
     // <main>
@@ -101,22 +97,32 @@ export default function Home() {
     // </main>
 
     <main className="h-screen relative">
-      <video autoPlay muted   ref={videoRef} className="doorVideo" onEnded={handleVideoEnd}>
-        <source src="/exported_video.webm" type="video/webm" />
+      <video
+        autoPlay
+        muted
+        ref={videoRef}
+        className="doorVideo"
+        onEnded={handleVideoEnd}
+      >
+        {/* <source src="/exported_video.webm" type="video/webm" /> */}
+        <source src="/newanimation.webm" type="video/webm" />
       </video>
 
       {showImage && (
         <motion.div
-        initial={{ opacity: 0.2 }}
-        animate={{ opacity: 1}}
-        transition={{ duration: 0.8 }}
+          initial={{ opacity: 0.2 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
         >
-      <img src={"/entercard.webp"}
-       alt="entercard"
-      onClick={handleImageClick}
-        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-         height={700} width={700}/>
-</motion.div>
+          <img
+            src={"/entercard.webp"}
+            alt="entercard"
+            onClick={handleImageClick}
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+            height={700}
+            width={700}
+          />
+        </motion.div>
       )}
       {/* <Youtube
         videoId="VaNuWtcJOkc"

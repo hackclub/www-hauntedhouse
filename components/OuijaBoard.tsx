@@ -84,12 +84,17 @@ export const OuijaBoard = () => {
 
   return (
     <div
-      onPointerEnter={() => setDimensions(callBackRef.current.getBoundingClientRect())}
+      onPointerEnter={() =>
+        setDimensions(callBackRef.current.getBoundingClientRect())
+      }
       onPointerMove={handlePointerMove}
       onPointerLeave={() => updateMyPresence({ cursor: null })}
       className="flex ouija flex-col h-full space-x-0 space-y-8 xl:space-y-0 xl:space-x-8"
     >
-      <div ref={callBackRef} className="border-8 p-2 relative w-full rounded-xl border-[#6a4c31]">
+      <div
+        ref={callBackRef}
+        className="border-8 p-2 relative w-full rounded-xl border-[#6a4c31]"
+      >
         <ReactFlashlight
           className="z-0"
           showCursor
@@ -97,7 +102,11 @@ export const OuijaBoard = () => {
           initialPosition={{ x: 10, y: 10 }}
         >
           <div>
-            <img src="/ouijaboard.jpeg" className="w-full rounded-xl" alt="Ouija Board" />
+            <img
+              src="/ouijaboard.jpeg"
+              className="w-full rounded-xl"
+              alt="Ouija Board"
+            />
           </div>
         </ReactFlashlight>
 
@@ -115,8 +124,13 @@ export const OuijaBoard = () => {
                 location={presence.location}
                 key={`cursor-${connectionId}`}
                 color={COLORS[connectionId % COLORS.length]}
-                x={presence.cursor.x * (currentWidth / presence.dimensions.width)}
-                y={presence.cursor.y * (currentHeight / presence.dimensions.height)}
+                x={
+                  presence.cursor.x * (currentWidth / presence.dimensions.width)
+                }
+                y={
+                  presence.cursor.y *
+                  (currentHeight / presence.dimensions.height)
+                }
               />
             );
           })}

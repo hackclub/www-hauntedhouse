@@ -14,6 +14,7 @@ import FadeIn from "react-fade-in/lib/FadeIn";
 import VisibilitySensor from "react-visibility-sensor";
 import useSound from "use-sound";
 import { FiVolume2, FiVolumeX } from "react-icons/fi";
+import { COLORS } from "@/components/NotesBoard";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
@@ -38,6 +39,13 @@ export default function Invitation() {
 
   return (
     <>
+      {/* <div className="hidden">
+        {COLORS.map((color, i) => (
+          <div
+            className={`bg-stickies-1 bg-stickies-2 bg-stickies-3 bg-stickies-4 bg-stickies-5 bg-stickies-6 bg-stickies-7 bg-stickies-0`}
+          ></div>
+        ))}
+      </div> */}
       <div
         style={{
           zIndex: 999,
