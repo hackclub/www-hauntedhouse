@@ -53,7 +53,7 @@ export default function Invitation() {
         className="fixed bottom-3 right-3"
       >
         <div
-          className=" border-gray-500 hover:border-beige  hover:text-beige duration-150 text-accent-default hover:bg-accent-default border rounded-full py-3 px-3 cursor-pointer"
+          className="bg-black border-gray-500 shadow-2xl hover:border-beige  hover:text-beige duration-150 text-accent-default hover:bg-accent-default border rounded-full py-3 px-3 cursor-pointer"
           onClick={toggleMute}
         >
           {isMuted ? <FiVolumeX size={24} /> : <FiVolume2 size={24} />}
@@ -131,7 +131,7 @@ export default function Invitation() {
         </div>
 
         <div
-          style={{ zIndex: 999 }}
+          style={{ zIndex: 900 }}
           className="text-center text-2xl text-black w-full px-2 bottom-0 left-0 absolute bg-accent-default py-1 mt-10"
         >
           {/* 👻 Hack the Night Away! Join our Halloween Hackathon for a
