@@ -81,7 +81,7 @@ const Row = ({ items }) => {
   if (!enabled) return null;
 
   return (
-    <Droppable droppableId="droppable">
+    <Droppable droppableId="droppable" direction="horizontal">
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}
