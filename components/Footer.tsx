@@ -29,7 +29,7 @@ export const Footer = () => {
   ];
 
   return (
-    <div className="p-6 lg:p-12 border-t-0 border-accent-default border-dashed">
+    <div className="mb-2 p-6 lg:p-12 border-t-0 border-accent-default border-dashed">
       <div className="max-w-5xl mx-auto">
         <h3 className="text-3xl  mb-3 text-center tracking-normal text-beige">
           We're gonna have a spooktastic experience—see you there,

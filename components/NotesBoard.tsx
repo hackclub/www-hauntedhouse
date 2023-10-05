@@ -82,7 +82,7 @@ const Row = ({ items }) => {
   if (!enabled) return null;
 
   return (
-    <Droppable droppableId="droppable" direction="horizontal">
+    <Droppable droppableId="droppable">
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}
@@ -95,9 +95,6 @@ const Row = ({ items }) => {
               Math.random() * COLORS.length
             )}`;
 
-            console.log(
-              `${color} w-full max-w-[20rem] h-full relative aspect-square  shadow-2xl mx-auto my-auto p-[30px]`
-            );
             return (
               <Draggable key={item.id} draggableId={item.content} index={index}>
                 {(provided, snapshot) => (

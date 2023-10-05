@@ -132,7 +132,7 @@ export default function Invitation() {
 
         <div
           style={{ zIndex: 900 }}
-          className="text-center text-2xl text-black w-full px-2 bottom-0 left-0 absolute bg-accent-default py-1 mt-10"
+          className="text-center text-md md:text-xl lg:text-2xl text-black w-full px-2 bottom-0 left-0 absolute bg-accent-default py-1 mt-10"
         >
           {/* 👻 Hack the Night Away! Join our Halloween Hackathon for a
           Spooktacular Code Adventure! 🎃 */}
