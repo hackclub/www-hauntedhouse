@@ -128,7 +128,7 @@ const Row = ({ items }) => {
                       }}
                     />
                     <div className="overflow-hidden relative">
-                      <img src={item.photo} className="mt-4" />
+                      <img src={item.photo} className="mt-4 sm:block hidden" />
                       <h1 className="pb-4 notes text-2xl lg:text-2xl xl:text-3xl mt-2 relative z-50 font-black text-black">
                         {item.content.includes(underline)
                           ? item.content.split(underline).map((part, index) => (
