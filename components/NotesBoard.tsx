@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
-const underline = "virtual haunted house";
 const items = [
   {
     id: 1,
@@ -11,7 +10,7 @@ const items = [
   },
   {
     id: 2,
-    content: `2. Design and build a website that will act as a room for the ${underline}.`,
+    content: "2. Design and build a website that will act as a room for the virtual haunted house.",
     photo: "/notesimages/11.webp",
   },
   {
@@ -127,16 +126,7 @@ const Row = ({ items }) => {
                     <div className="overflow-hidden relative">
                       <img src={item.photo} className="mt-4 sm:block hidden" />
                       <h1 className="pb-4 notes text-2xl lg:text-2xl xl:text-3xl mt-2 relative z-50 font-black text-black">
-                        {item.content.includes(underline)
-                          ? item.content.split(underline).map((part, index) => (
-                              <React.Fragment key={index}>
-                                {index > 0 && (
-                                  <span className="underline">{underline}</span>
-                                )}
-                                {part}
-                              </React.Fragment>
-                            ))
-                          : item.content}
+                        {item.content}
                       </h1>
                     </div>
                   </div>
