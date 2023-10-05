@@ -142,7 +142,7 @@ export const OuijaBoard = () => {
       </div>
       <div
         ref={callBackRef}
-        className="border-8 p-2 relative w-full rounded-xl border-[#6a4c31] sm:hidden block"
+        className="border-8  relative w-full rounded-xl border-[#6a4c31] sm:hidden block"
       >
      
           <div>
