@@ -21,6 +21,11 @@ export const Footer = () => {
       sig: "https://epoch.hackclub.com/signatures/devenjadhav.png",
       link: "https://github.com/devenjadhav",
     },
+    {
+      sig: "https://cloud-ni62444df-hack-club-bot.vercel.app/0pavani.png",
+      link: "https://www.instagram.com/enchanting.hues/",
+      pavani: true,
+    },
   ];
 
   return (
@@ -33,7 +38,13 @@ export const Footer = () => {
           {signatures.map((sig, i) => {
             return (
               <a key={i} href={sig.link} target="_blank">
-                <img key={i} src={sig.sig} className="invert max-h-[80px]" />
+                <img
+                  key={i}
+                  src={sig.sig}
+                  className={`invert ${
+                    sig.pavani ? "max-h-[120px] ml-2" : "max-h-[80px]"
+                  }`}
+                />
               </a>
             );
           })}
