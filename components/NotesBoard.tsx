@@ -16,7 +16,7 @@ const items = [
   {
     id: 3,
     content:
-      "3. Submit the website so we can link it with the rest of the house.",
+      "3. Submit a room so we can link it with the rest of the house.",
     photo: "/notesimages/15.webp",
   },
   {

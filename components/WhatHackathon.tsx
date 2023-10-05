@@ -23,7 +23,7 @@ export const WhatHackathon = () => {
       <div className="flex flex-col max-w-[90rem] mx-auto divide-x-0 divide-accent-default divide-dashed">
         <div className="p-8 md:p-12">
           <h1 className="text-5xl mb-20 lg:text-7xl text-center text-accent-darker">
-          Oh the projects you’ll make…
+          What Happens in the House, Creates the House
           </h1>
           <NotesBoard />
           {/* <div className="w-full px-8 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:flex flex-wrap lg:flex-nowrap gap-16  lg:gap-8 max-w-6xl mx-auto bg-[url('/corkboard.webp')] bg-cover py-10 border-[15px] border-[#E8E0CC]">
