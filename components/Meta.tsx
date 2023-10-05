@@ -24,7 +24,7 @@ const Meta = () => {
           ],
       }}
       twitter={{
-        cardType: "summary",
+        cardType: "summary_large_image",
       }}
     />
   );
