@@ -1,6 +1,8 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
+const underline = "virtual haunted house";
 const items = [
   {
     id: 1,
@@ -9,8 +11,7 @@ const items = [
   },
   {
     id: 2,
-    content:
-      "2. Design and build a website that will act as a room for the haunted house.",
+    content: `2. Design and build a website that will act as a room for the ${underline}.`,
     photo: "/notesimages/11.webp",
   },
   {
@@ -85,7 +86,7 @@ const Row = ({ items }) => {
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}
-          className="w-full px-8 grid grid-cols-1 md:grid-cols-2 lg:flex flex-wrap lg:flex-nowrap gap-12  lg:gap-8 max-w-7xl mx-auto bg-[url('/bgcork.webp')] bg-cover py-10 border-[10px] border-accent-darker rounded-[5px] filter-black"
+          className="w-full px-8 grid grid-cols-1 md:grid-cols-2 lg:flex flex-wrap lg:flex-nowrap gap-12  lg:gap-8 max-w-7xl mx-auto bg-[url('/darkcork.webp')] bg-cover py-10 border-[10px] border-accent-darker rounded-[5px] filter-black"
           {...provided.droppableProps}
         >
           {items.map((item, index) => {
@@ -129,7 +130,16 @@ const Row = ({ items }) => {
                     <div className="overflow-hidden relative">
                       <img src={item.photo} className="mt-4" />
                       <h1 className="pb-4 notes text-2xl lg:text-2xl xl:text-3xl mt-2 relative z-50 font-black text-black">
-                        {item.content}{" "}
+                        {item.content.includes(underline)
+                          ? item.content.split(underline).map((part, index) => (
+                              <React.Fragment key={index}>
+                                {index > 0 && (
+                                  <span className="underline">{underline}</span>
+                                )}
+                                {part}
+                              </React.Fragment>
+                            ))
+                          : item.content}
                       </h1>
                     </div>
                   </div>
