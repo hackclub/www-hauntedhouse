@@ -93,7 +93,7 @@ export const OuijaBoard = () => {
     >
       <div
         ref={callBackRef}
-        className="border-8 p-2 relative w-full rounded-xl border-[#6a4c31]"
+        className="border-8 p-2 relative w-full rounded-xl border-[#6a4c31] sm:block hidden"
       >
         <ReactFlashlight
           className="z-0"
@@ -109,6 +109,10 @@ export const OuijaBoard = () => {
             />
           </div>
         </ReactFlashlight>
+
+       
+
+        
 
         <div className="absolute w-full h-full overflow-x-hidden top-0 left-0 mt-0 p-0">
           {others.map(({ connectionId, presence }, i) => {
@@ -136,6 +140,20 @@ export const OuijaBoard = () => {
           })}
         </div>
       </div>
+      <div
+        ref={callBackRef}
+        className="border-8 p-2 relative w-full rounded-xl border-[#6a4c31] sm:hidden block"
+      >
+     
+          <div>
+            <img
+              src="/ouijaboard.jpeg"
+              className="w-full rounded-xl"
+              alt="Ouija Board"
+            />
+          </div>
+      
+        </div>
     </div>
   );
 };
