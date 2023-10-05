@@ -71,7 +71,14 @@ const items = [
         </a>{" "}
         and we'll make sure to answer all their questions. Haunted House will be
         supervised by background checked staff and overseen by 24/7 security
-        staff.
+        staff. We have also published a{" "}
+        <a
+          className="underline"
+          href="https://docs.google.com/document/d/1R6bZVzD_L27nqYyE4kTRPbKn2pqpCNmvkRDDGw-l4Rc/edit?usp=sharing"
+        >
+          parents' guide
+        </a>{" "}
+        with more resources.
       </div>
     ),
   },
