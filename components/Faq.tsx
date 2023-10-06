@@ -150,7 +150,7 @@ const AccordionItem = ({ header, ...rest }) => (
     }}
     contentProps={{
       className:
-        "transition-height duration-200 ease-out text-beige tracking-wide text-[20px]",
+        "transition-height duration-200 ease-out text-beige tracking-wider text-[20px]",
     }}
     panelProps={{ className: "p-4" }}
   />
