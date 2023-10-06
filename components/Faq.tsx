@@ -106,7 +106,7 @@ const items2 = [
     header: "What are the sleeping arrangements?",
     content: (
       <div>
-        On both nights we will have a designated gender-seperated and supervised
+       On the night of the event we will have a designated gender-seperated and supervised
         sleeping area in the venue with low lights and minimal sound for you to
         rest! Make sure to bring a sleeping bag!
       </div>
@@ -150,7 +150,7 @@ const AccordionItem = ({ header, ...rest }) => (
     }}
     contentProps={{
       className:
-        "transition-height duration-200 ease-out text-beige tracking-wide text-lg",
+        "transition-height duration-200 ease-out text-beige tracking-wide text-[20px]",
     }}
     panelProps={{ className: "p-4" }}
   />
