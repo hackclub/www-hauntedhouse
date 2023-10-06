@@ -21,6 +21,13 @@ export default function Home() {
     // offset: ["end end", "start start"],
   });
 
+  const [videoStarted, setVideoStarted] = useState(false);
+
+  const handleVideoPlay = () => {
+    setVideoStarted(true);
+  };
+
+
   useEffect(() => {
     setTimeout(() => {
       // router.push("/invitation");
@@ -31,13 +38,15 @@ export default function Home() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowImage(true);
-      videoRef.current.pause();
-    }, 1900);
+    if (videoStarted) {
+      const timer = setTimeout(() => {
+        setShowImage(true);
+        videoRef.current.pause();
+      }, 1900);
 
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    }
+  }, [videoStarted]);
 
   const handleImageClick = () => {
     setShowImage(false);
@@ -103,6 +112,7 @@ export default function Home() {
         ref={videoRef}
         className="doorVideo"
         onEnded={handleVideoEnd}
+        onPlay={handleVideoPlay} 
       >
         {/* <source src="/exported_video.webm" type="video/webm" /> */}
         <source src="/newanimation.webm" type="video/webm" />
