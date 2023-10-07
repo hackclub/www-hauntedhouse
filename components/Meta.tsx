@@ -3,7 +3,7 @@ const title = "The Hack Club Haunted House";
 
 const description =
   "🎃 Where Fright Meets Byte: A Haunted House Hackathon Experience. Oct 28th to 29th 2023 in Downtown Chicago";
-const url = "https://www-hauntedhouse.hackclub.dev";
+const url = "https://haunted.hackclub.com";
 const Meta = () => {
   return (
     <NextSeo
