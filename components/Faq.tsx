@@ -117,7 +117,7 @@ const items2 = [
     content: (
       <div>
         Contact us! Reach out on{" "}
-        <span className="italics underline">#hauntedhouse</span> on the Hack
+        <span className="italics underline"><a href="https://hackclub.slack.com/archives/C05V7QGTMAT">#hauntedhouse</a></span> on the Hack
         Club Slack or email us at{" "}
         <a href="mailto:hauntedhouse@hackclub.com" className="underline">
           hauntedhouse@hackclub.com
