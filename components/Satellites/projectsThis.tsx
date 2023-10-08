@@ -13,7 +13,7 @@ export const Projects = () => {
           In a few cities around you, there might be a satellite event happening
           (local "branches" of Haunted House if you may). Check out{" "}
           <span className="underline">#hauntedhouse-satellites</span> on the{" "}
-          <a href="https://hackclub.com/slack" className="underline">
+          <a href="https://hackclub.com/slack?event=hauntedhouse-event" className="underline">
             Slack
           </a>{" "}
           and{" "}
