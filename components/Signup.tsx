@@ -6,7 +6,7 @@ import useSound from "use-sound";
 
 export const Signup = ({ bgPlay, bgStop }) => {
   const minAge = 13;
-  const maxAge = 18;
+  const maxAge = 19;
   const [age, setAge] = useState(minAge);
   const controls = useAnimation();
   const pageControls = useAnimation();
@@ -25,7 +25,7 @@ export const Signup = ({ bgPlay, bgStop }) => {
       setAge(inputValue);
     } else {
       setShowError(`Woah there, Haunted House is meant for high schoolers between 13
-      and 17 years old. Contact hauntedhouse@hackclub.com if you think
+      and 18 years old. Contact hauntedhouse@hackclub.com if you think
       this is a mistake.`);
     }
   };
@@ -46,44 +46,44 @@ export const Signup = ({ bgPlay, bgStop }) => {
     const age = parseInt(event.target.age.value, 10);
     const name = event.target.name.value;
     const email = event.target.email.value;
-
+  
     console.log(age, name, email);
     event.preventDefault();
-
+  
     if (name && checkAge(age) && validateEmail(email)) {
-      fetch("/api/submit", {
-        method: "POST",
-        body: JSON.stringify({
-          name,
-          email,
-          age,
-        }),
-      });
-
-      setEndPage(true);
-
-      // await bgStop();
-      await play();
-      // await bgPlay();
-
-      event.target.reset();
+      try {
+        await fetch("/api/submit", {
+          method: "POST",
+          body: JSON.stringify({
+            name,
+            email,
+            age,
+          }),
+        });
+  
+        setEndPage(true);
+  
+        await play();
+  
+        event.target.reset();
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
     }
-
+  
     if (!name || !validateEmail(email) || !age) {
-      setShowError("");
       setShowError(
         "Hey! Looks like you haven't inputted everything in correctly. Try again, and the spirits may give you access to the Haunted House..."
       );
     }
-
-    if (age >= 18 || age < 13) {
-      setShowError("");
-
-      setShowError(`Woah there, Haunted House is meant for high schoolers between 13
-      and 17 years old. Contact hauntedhouse@hackclub.com if you think
-      this is a mistake.`);
+  
+    if (age >= 19 || age < 13) {
+      setShowError(
+        "Woah there, Haunted House is meant for high schoolers between 13 and 18 years old. Contact hauntedhouse@hackclub.com if you think this is a mistake."
+      );
     }
   };
+  
 
   useEffect(() => {
     if (showError !== "") {

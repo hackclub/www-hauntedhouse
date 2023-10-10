@@ -31,10 +31,10 @@ export default function handler(
   }
 
   // Check age limit
-  if (body.age < 13 || body.age >= 18) {
+  if (body.age < 13 || body.age >= 19) {
     res.status(418).send({
       message:
-        "Woah there, Haunted House is meant for high schoolers between 13 and 17 years old. Contact hauntedhouse@hackclub.com if you think this is a mistake.",
+        "Woah there, Haunted House is meant for high schoolers between 13 and 18 years old. Contact hauntedhouse@hackclub.com if you think this is a mistake.",
     });
     return;
   }
