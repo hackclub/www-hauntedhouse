@@ -13,7 +13,7 @@ type Body = {
   age: number;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
@@ -42,7 +42,7 @@ export default function handler(
   const base = Airtable.base("appl7i287x5O6NeX8");
 
   try {
-    base("Signups").create([
+    const table = await base("Signups").create([
       {
         fields: {
           Name: body.name,

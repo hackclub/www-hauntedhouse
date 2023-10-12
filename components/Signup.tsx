@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useAnimation } from "framer-motion";
 import useSound from "use-sound";
+import { Spinner } from "./Spinner";
 
 // import mwahaha from "../public/mwahaha.mp3";
 
@@ -12,6 +13,8 @@ export const Signup = ({ bgPlay, bgStop }) => {
   const pageControls = useAnimation();
   const [showError, setShowError] = useState("");
   const [endPage, setEndPage] = useState(false);
+
+  const [submitting, setSubmitting] = useState(false);
 
   const [play] = useSound("/mwahaha.mp3");
   const handleAgeInput = (event) => {
@@ -51,6 +54,10 @@ export const Signup = ({ bgPlay, bgStop }) => {
     event.preventDefault();
 
     if (name && checkAge(age) && validateEmail(email)) {
+      setShowError("Submitting Registration...");
+
+      setSubmitting(true);
+
       fetch("/api/submit", {
         method: "POST",
         body: JSON.stringify({
@@ -58,15 +65,24 @@ export const Signup = ({ bgPlay, bgStop }) => {
           email,
           age,
         }),
-      });
+      })
+        .then((response) => response.json())
+        .then(async ({ message, error }) => {
+          if (!error) {
+            setSubmitting(false);
+            setEndPage(true);
 
-      setEndPage(true);
+            setShowError("");
 
-      // await bgStop();
-      await play();
-      // await bgPlay();
+            // await bgStop();
+            await play();
+            // await bgPlay();
 
-      event.target.reset();
+            event.target.reset();
+          } else {
+            setShowError(message);
+          }
+        });
     }
 
     if (!name || !validateEmail(email) || !age) {
@@ -151,7 +167,7 @@ export const Signup = ({ bgPlay, bgStop }) => {
               </p>
             </div>
             <div className="space-y-5" id="signup">
-            <div className="flex-col flex space-y-1">
+              <div className="flex-col flex space-y-1">
                 <label className="text-2xl font-black text-beige">Name</label>
                 <input
                   type="text"
@@ -169,7 +185,6 @@ export const Signup = ({ bgPlay, bgStop }) => {
                   placeholder="Ex: orpheus@hackclub.com"
                 />
               </div>
-         
 
               <div className="flex-col flex space-y-1">
                 <label className="text-2xl font-black text-beige">Age</label>
@@ -213,11 +228,17 @@ export const Signup = ({ bgPlay, bgStop }) => {
                   <p className="text-beige text-lg h-min">{showError}</p>
                 </div>
               </div>
-              <input
-                type="submit"
-                value={"Sign Up"}
-                className="text-xl hover:cursor-pointer border-accent-darker border-3 rounded-lg  bg-accent-default text-beige px-4 py-2 w-full hover:bg-beige hover:text-accent-default transition ease-in-out duration-150"
-              />
+              {submitting ? (
+                <div className="flex justify-center text-xl hover:cursor-pointer border-accent-darker border-3 rounded-lg  bg-accent-default text-beige px-4 py-2 w-full hover:bg-beige hover:text-accent-default transition ease-in-out duration-150">
+                  <Spinner />
+                </div>
+              ) : (
+                <input
+                  type="submit"
+                  value={"Sign Up"}
+                  className="text-xl hover:cursor-pointer border-accent-darker border-3 rounded-lg  bg-accent-default text-beige px-4 py-2 w-full hover:bg-beige hover:text-accent-default transition ease-in-out duration-150"
+                />
+              )}
             </div>
           </div>
         </div>
