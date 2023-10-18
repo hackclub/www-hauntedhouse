@@ -23,7 +23,7 @@ export const PlaceCard = () => {
       />
 
       <h1 className=" text-beige text-[550%] mt-[15%] rotate-[15deg] text-center ">
-        <a href="https://maps.app.goo.gl/aMNfuHEeYyzhpMpv6">Build</a>
+        <a href="https://www.buildchicago.org/">BUILD Inc</a>
         <br />
         Chicago
       </h1>
