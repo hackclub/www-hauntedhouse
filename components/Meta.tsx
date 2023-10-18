@@ -2,7 +2,7 @@ import { NextSeo } from "next-seo";
 const title = "The Hack Club Haunted House";
 
 const description =
-  "🎃 Where Fright Meets Byte: A Haunted House Hackathon Experience. Oct 28th to 29th 2023 in Downtown Chicago";
+  "🎃 Where Fright Meets Byte: A Haunted House Hackathon Experience. Oct 28th to 29th 2023 in Chicago";
 const url = "https://haunted.hackclub.com";
 const Meta = () => {
   return (
