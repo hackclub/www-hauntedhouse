@@ -53,8 +53,8 @@ export const InvitationHero = () => {
                 // zIndex: 60,
               }
             }
-            className="text-beige  animate-bounce absolute bottom-10"
-            size={40}
+            className="text-white animate-bounce absolute bottom-10"
+            size={50}
           />
         </motion.div>
       )}
