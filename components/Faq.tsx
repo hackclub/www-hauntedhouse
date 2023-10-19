@@ -11,7 +11,7 @@ const items = [
         If you're eighteen or under, yes, we are so excited to see you in
         Chicago! If you're over 18 but still in high school, shoot us a mail at{" "}
         <a href="mailto:hauntedhouse@hackclub.com" className="underline">
-          hauntedhouse@hackclub.com
+          haunted@hackclub.com
         </a>
         .
       </div>
@@ -67,7 +67,7 @@ const items = [
       <div>
         We're here to help, ask them to reach out to us at{" "}
         <a href="mailto:hauntedhouse@hackclub.com" className="underline">
-          hauntedhouse@hackclub.com
+          haunted@hackclub.com
         </a>{" "}
         and we'll make sure to answer all their questions. Haunted House will be
         supervised by background checked staff and overseen by 24/7 security
@@ -120,7 +120,7 @@ const items2 = [
         <span className="italics underline"><a href="https://hackclub.slack.com/archives/C05V7QGTMAT">#hauntedhouse</a></span> on the Hack
         Club Slack or email us at{" "}
         <a href="mailto:hauntedhouse@hackclub.com" className="underline">
-          hauntedhouse@hackclub.com
+          haunted@hackclub.com
         </a>
         . We're always ready to answer all your questions!
       </div>
