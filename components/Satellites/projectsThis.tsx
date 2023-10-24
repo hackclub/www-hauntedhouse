@@ -11,9 +11,32 @@ export const Projects = () => {
       <div>
         <p className="text-beige text-lg xl:text-xl">
           In a few cities around you, there might be a satellite event happening
-          (local "branches" of Haunted House if you may). Check out{" "}
-          <span className="underline"><a href="https://hackclub.slack.com/archives/C0601NQJ278">#hauntedhouse-satellites</a></span> on the{" "}
-          <a href="https://hackclub.com/slack?event=hauntedhouse-event" className="underline">
+          (local "branches" of Haunted House if you may). We currently have{" "}
+          <a
+            href="https://tally.so/r/mVP17N
+"
+            className="underline"
+          >
+            #haunted-house-toronto
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://hackclub.slack.com/archives/C061TFSQDFC"
+            className="underline"
+          >
+            #haunted-house-bayarea
+          </a>{" "}
+          lined up. Check out{" "}
+          <span className="underline">
+            <a href="https://hackclub.slack.com/archives/C0601NQJ278">
+              #hauntedhouse-satellites
+            </a>
+          </span>{" "}
+          on the{" "}
+          <a
+            href="https://hackclub.com/slack?event=hauntedhouse-event"
+            className="underline"
+          >
             Slack
           </a>{" "}
           and{" "}
