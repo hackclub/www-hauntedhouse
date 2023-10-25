@@ -28,7 +28,7 @@ export const Signup = ({ bgPlay, bgStop }) => {
       setAge(inputValue);
     } else {
       setShowError(`Woah there, Haunted House is meant for high schoolers between 13
-      and 18 years old. Contact hauntedhouse@hackclub.com if you think
+      and 18 years old. Contact haunted@hackclub.com if you think
       this is a mistake.`);
     }
   };
@@ -96,7 +96,7 @@ export const Signup = ({ bgPlay, bgStop }) => {
       setShowError("");
 
       setShowError(`Woah there, Haunted House is meant for high schoolers between 13
-      and 18 years old. Contact hauntedhouse@hackclub.com if you think
+      and 18 years old. Contact haunted@hackclub.com if you think
       this is a mistake.`);
     }
   };
