@@ -125,7 +125,6 @@ export default function Home() {
 
           <Faq />
         </div>
-        <Signup bgPlay={play} bgStop={stop} />
         <div className="pb-12">
           <Footer />
         </div>
